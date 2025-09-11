@@ -1900,15 +1900,22 @@ body .authorization{background:0 0}#app .authorization{background-image:url();ba
     }
     initializeHudProxy();
     createHud();
-    window.onInfoChange = onInfoChange;
-    setTimeout(() => {
-        hudElements.forEach(el => el.remove());
-        if (hudScript) {
-            hudScript.remove();
-        }
-        if (hudStyleElement) {
-            hudStyleElement.remove();
-        }
-    });
+   const zoneContainer = document.createElement("div");
+zoneContainer.className = "OLD-RADMIR-green-zone__main";
+
+const zoneImg = document.createElement("img");
+zoneImg.className = "OLD-RADMIR-green-zone__image";
+zoneImg.src = bayokNewHudConfig.icons.zone;
+
+const zoneText = document.createElement("div");
+zoneText.className = "OLD-RADMIR-green-zone__text";
+zoneText.innerHTML = `
+    <div>Green Zone</div>
+    <div>Безопасная территория</div>
+`;
+
+zoneContainer.appendChild(zoneImg);
+zoneContainer.appendChild(zoneText);
+document.body.appendChild(zoneContainer);
 };
 AddHud();
