@@ -485,12 +485,12 @@ body .window-table__item.selected:hover {
 }
 
 #app .player-interaction-layer {
-    background: rgb(0 0 0 / 80%);
-    border: none
+    background: #00000080;
+    border: #000000c2
 }
 
 #app .player-interaction__container {
-    background: rgb(0 0 0 / 80%);
+    background: #00000080;
     border: none
 }
 
@@ -506,19 +506,19 @@ body .window-table__item.selected:hover {
 
 #app .player-interaction__container:after,
 .player-interaction__container:before {
-    background: 0 0 !important
+    background: #00000080 !important
 }
 
 #app .player-interaction-favorite {
-    background: rgb(0 0 0 / 80%)
+    background: #00000080
 }
 
 #app .player-interaction-favorite:hover {
-    background: rgba(63, 63, 63, .8)
+    background: #00000080
 }
 
 #app .container {
-    background: rgb(0 0 0 / 80%)
+    background: #00000080
 }
 
 #app .vue3-slider .track-filled,
