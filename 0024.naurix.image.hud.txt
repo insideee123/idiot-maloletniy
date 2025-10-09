@@ -1775,13 +1775,13 @@ body #app .hud-radmir-speedometer-secondary__data-text {
       .Old-Fixed-HudBottom{
         transform-origin: right bottom;
         position: absolute;
-        right: 0;
-        top: 15px;
+        right: 44;
+        top: 44px;
       }
-      .Old-Fixed-ZZ{}
+      .Old-Fixed-ZZ
        position:absolute;
-       left:-15.02vh;
-       bottom:0.3vh
+       left: 44.02vh;
+       bottom: 0.3vh
       }
       .Old-Fixed-ZZ_icon{
        width:1.5vh;
