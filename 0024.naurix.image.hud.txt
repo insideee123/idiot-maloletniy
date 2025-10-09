@@ -1585,13 +1585,13 @@ body #app .hud-radmir-speedometer-secondary__data-text {
        margin-right:2vh
       }
       .Old-Fixed-Bonus{
-       background: radial-gradient(93.1% 93.1% at 126.72% 6.9%, #eb00ff 0, #eb00ff00 100%), linear-gradient(129.39deg, #f5be09 30.88%, #e9651b 98.06%);
+       background: radial-gradient(93.1% 93.1% at 126.72% 6.9%, #000000ff 0, rgba(0, 0, 0, 1) 100%), linear-gradient(129.39deg, #000000ff 30.88%, #000000ff 98.06%);
        width: 32px;
        height: 32px;
        display: flex;
        align-items: center;
        justify-content: center;
-       font-size: 16px;
+       font-size: 19px;
        color: #fff;
        font-weight: 700;
        position: absolute;
@@ -1734,14 +1734,14 @@ body #app .hud-radmir-speedometer-secondary__data-text {
        box-shadow:#0754ed 0 0 .46vh 0
       }
       .Old-Fixed-Param.hunger .Old-Progress__Values{
-       width: 50%;
+       width: 100%;
        box-shadow: hsl(26deg 100% 59% / 30%) 0 0 5px 0;
-       background-color: #cc661d
+       background-color: #ffffffff
       }
       .Old-Fixed-Param.breath .Old-Progress__Values{
         width: 99%;
         background-color: #fff;
-        box-shadow: rgba(255, 255, 255, .5) 0 0 5px 0
+        box-shadow: rgba(255, 255, 255, 1) 0 0 5px 0
       }
       .Old-Fixed-Param.health .old-param__icon{
        margin-left: 20px
@@ -1778,7 +1778,7 @@ body #app .hud-radmir-speedometer-secondary__data-text {
         right: 0;
         top: 20px;
       }
-      .Old-Fixed-ZZ{
+      .Old-Fixed-ZZ
        position:absolute;
        left:21.3vh;
        bottom:21.3vh
