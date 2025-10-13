@@ -1564,8 +1564,8 @@ body .capture-table__timer {
        margin-bottom:3vh
       }
       .Old-Fixed-Logo img{
-       width:19.52vh;
-       height:6.2vh;
+       width:20.52vh;
+       height:7.2vh;
        margin-right:2vh
       }
       .Old-Fixed-Bonus{
@@ -1595,8 +1595,8 @@ body .capture-table__timer {
        margin-right:3.46vh
       }
       .Old-Fixed-Weapon{
-       width:16.6vh;
-       height:16.6vh;
+       width:17.6vh;
+       height:17.6vh;
        position:relative;
        display:flex;
        justify-content:flex-end;
