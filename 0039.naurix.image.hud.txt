@@ -80,7 +80,7 @@ body .info-card .text {
 
 /* ------- Окна ------- */
 #app .modal-container-wrapper {
-    background: rgba(185, 185, 185, 0.8) !important;
+    background: rgba(75, 0, 0, 0.8) !important;
     border: 0.19vh solid #ffffff0d;
     border-radius: 2.5vh !important;
 }
@@ -506,7 +506,7 @@ body .window-table__item.selected:hover {
 
 #app .player-interaction__container:after,
 .player-interaction__container:before {
-    background: #c2c2c2ba !important
+    background: 0 0 !important
 }
 
 #app .player-interaction-favorite {
