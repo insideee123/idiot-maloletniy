@@ -1916,35 +1916,6 @@ ${bayokNewHudConfig.style.authorization}
     background: #ffffffff !important
 }
 
-.OLD-RADMIR-green-zone__main 
-    position: absolute;
-    left: 10.6vh;
-    bottom: -76vh;
-    display: flex;
-    align-items: center;
-}
-
-.OLD-RADMIR-green-zone__image 
-    margin-right: 10px;
-}
-
-.OLD-RADMIR-green-zone__text 
-    color: #ffffffff;
-    text-shadow: 3px 3px 5px #00000080
-}
-
-.OLD-RADMIR-green-zone__text div:first-child 
-    font-size: 13px;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-.OLD-RADMIR-green-zone__text div:last-child 
-    color: rgba(255, 255, 255, 1);
-    font-size: 12px;
-    font-weight: 500;
-    margin-top: 5px;
-}
 
 /* Additional styles from the request */
 #app .fuel__button .text:before { background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMyAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMS40NTEgMUw0LjQ4NCA3Ljg0OEwxIDQuNDI0IiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPg0KPC9zdmc+DQo=) center/contain no-repeat !important } 
@@ -2021,8 +1992,6 @@ body .authorization{background:0 0}#app .authorization{background-image:url();ba
         </div>
       </div>
       <div class="Old-Fixed-HudBottom">
-      <div class="Old-Fixed-ZZ"><img src="${bayokNewHudConfig.icons.zone}" 
-      <class="Old-Fixed-ZZ_icon"></div>
       <div class="Old-Fixed-Freeze">
       <span class="Old-Fixed-Freeze_text">Freeze:</span>
       <span class="Old-Fixed-Freeze_value">100</span>
@@ -2135,12 +2104,7 @@ body .authorization{background:0 0}#app .authorization{background-image:url();ba
                 freezeValueEl.textContent = formattedValue;
             }
         },
-        greenZone: (isVisible) => {
-            const greenZoneEl = document.querySelector(".Old-Fixed-ZZ");
-            if (greenZoneEl) {
-                greenZoneEl.style.display = isVisible ? "" : "none";
-            }
-        },
+       
     };
     function onInfoChange(type, value) {
         setTimeout(() => {
