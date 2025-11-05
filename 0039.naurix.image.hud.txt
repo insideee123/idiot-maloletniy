@@ -1939,7 +1939,7 @@ ${bayokNewHudConfig.style.authorization}
     text-transform: uppercase;
 }
 
-.OLD-RADMIR-green-zone__text div:last-child {
+.OLD-RADMIR-green-zone__text div:last-child 
     color: rgba(255, 255, 255, 1);
     font-size: 12px;
     font-weight: 500;
@@ -1962,7 +1962,7 @@ ${bayokNewHudConfig.style.authorization}
 #app .fuel__button { background: linear-gradient(185.93deg, #fff -22.13%, #e6e6e6 122.51%) !important; color: #000000ff !important } 
 #app .fuel__button:hover { box-shadow: 0 6px 20px #ffffff40 !important } 
 
-/* ---------- ПЕРЕКРАСЫ ----------*/ 
+/* ---------- НИЧЕГО НЕ ТРОГАТЬ ИТАК ВСЕ РАБОТАЕТ ----------*/ 
 
 body .authorization{background:0 0}#app .authorization{background-image:url();background-size:auto 100vh}
       `;
@@ -2021,7 +2021,8 @@ body .authorization{background:0 0}#app .authorization{background-image:url();ba
         </div>
       </div>
       <div class="Old-Fixed-HudBottom">
-      <div class="Old-Fixed-ZZ"><img src="${bayokNewHudConfig.icons.zone}" class="Old-Fixed-ZZ_icon"></div>
+      <div class="Old-Fixed-ZZ"><img src="${bayokNewHudConfig.icons.zone}" 
+      <class="Old-Fixed-ZZ_icon"></div>
       <div class="Old-Fixed-Freeze">
       <span class="Old-Fixed-Freeze_text">Freeze:</span>
       <span class="Old-Fixed-Freeze_value">100</span>
