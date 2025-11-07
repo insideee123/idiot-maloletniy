@@ -43,7 +43,7 @@ background-size: auto 100vh;
 /* ------- х2 х3 ------- */
 
 body .old-bonus {
-    background: #000000ef;
+    background: #ffffffef;
     font-style: normal;
 }
 
@@ -54,7 +54,7 @@ body .old-bonus {
     width: 2.96vh;
     height: 2.96vh;
     border-radius: 10vh;
-    background: radial-gradient(93.1% 93.1% at 126.72% 6.9%, #eb00ff 0, #eb00ff00 100%), linear-gradient(129.39deg, #f5be09 30.88%, #e9651b 98.06%);
+    background: radial-gradient(93.1% 93.1% at 126.72% 6.9%, rgba(0, 0, 0, 0.705) 0, #00000071 100%), linear-gradient(129.39deg, #00000071 30.88%, #00000070 98.06%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1357,8 +1357,8 @@ body #app .hud-radmir-speedometer-secondary__data-text {
        margin-bottom:3vh
       }
       .Old-Fixed-Logo img{
-       width:19.52vh;
-       height:6.2vh;
+       width:23.52vh;
+       height:10.2vh;
        margin-right:2vh
       }
       .Old-Fixed-Main,.Old-Fixed-Cash,.Wanted_row{
