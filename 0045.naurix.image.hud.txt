@@ -943,7 +943,7 @@ body .window-table__item.selected:hover {
     font-weight: 500;
     margin-top: .50vh;
 }
-/* ---------- круглый ----------*/ #app .hud-radmir-radar__map { border-radius: 100%; border: 1.45vh solid #000000ff !important } body #app .hud-radmir-radar__map { transition: .3s }
+
 
 /* квадратный спидометр.css */
 body #app .hud-radmir-speedometer-secondary__data__before {
@@ -1468,8 +1468,8 @@ body #app .hud-radmir-speedometer-secondary__data-text {
       }
       .Old-Fixed-Bonus{
        background: #000000;
-       width: 2.96vh;
-       height: 2.96vh;
+       width: 2.86vh;
+       height: 2.86vh;
        display: flex;
        align-items: center;
        justify-content: center;
@@ -1480,7 +1480,7 @@ body #app .hud-radmir-speedometer-secondary__data-text {
        bottom: -5px;
        right: -2px;
        border-radius: 60%;
-       font-family: "GothamPro Black Italic";
+       font-family: "GothamPro Black";
        font-weight: 900;
        font-size: 1.3vh
       }
