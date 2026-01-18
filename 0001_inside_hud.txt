@@ -14,7 +14,7 @@ function AddHud() {
         loadingNotification.style.padding = '10px 20px';
         loadingNotification.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
         loadingNotification.style.color = '#fff';
-        loadingNotification.style.fontFamily = 'Font';
+        loadingNotification.style.fontFamily = 'GothamPro Black';
         loadingNotification.style.fontSize = '16px';
         loadingNotification.style.borderRadius = '8px';
         loadingNotification.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
@@ -269,8 +269,8 @@ const oldRadmirConfig = {
        color: #fff;
        font-weight: 700;
        position: absolute;
-       bottom: -5px;
-       right: -2px;
+       bottom: 1px;
+       right: -5px;
        border-radius: 50%;
        font-family:'GothamPro Black';
        font-weight: 900;
