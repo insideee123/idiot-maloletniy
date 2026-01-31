@@ -1369,12 +1369,12 @@ function createHudPlaceholder() {
     square.id = 'hud-square';
 
     square.style.position = 'fixed';
-    square.style.right = '1.4vw';   // как Old-Fixed-HudTop
-    square.style.top = '3.4vh';
-    square.style.width = '12vh';    // размер квадрата
-    square.style.height = '12vh';
-    square.style.background = 'rgba(0, 0, 0, 0.7)';
-    square.style.border = '2px solid #ffffff55';
+    square.style.right = '2.4vw';   // как Old-Fixed-HudTop
+    square.style.top = '7.4vh';
+    square.style.width = '22vh';    // размер квадрата
+    square.style.height = '22vh';
+    square.style.background = 'rgb(101, 91, 255)';
+    square.style.border = '2px solid #ffffff00';
     square.style.borderRadius = '1vh';
     square.style.zIndex = '1000';
 
