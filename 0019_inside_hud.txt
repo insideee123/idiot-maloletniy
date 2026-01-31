@@ -123,7 +123,7 @@ const oldRadmirConfig = {
         "active_wanted": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAMAAAAIRmf1AAAAS1BMVEVHcEzq6urf39/z8/PCwsL+/v75+fn////8/Pz9/f3s7Oz39/f6+vrZ2dn39/f4+Pj+/v77+/uVlZXy8vIAAAD5+fnw8PDq6ur///8xJKkbAAAAGHRSTlMAOh9+CejI/PT3UK/bFqOWsborjg3RZybLK1RnAAAAcElEQVQY02WPVwKDMAxDBWQCgU7Q/U/KcKBxqi/7ecgGLrX2gVqRNBV6kuw16nbE4aPYgTi+JDF9NzlLkf0O7wWYWQtwNYr78KiId+fGUDJTekrXfcfd6Ft9W7b8PfrHZEyxJgafgBQLCxPWXAyNBBvC4w3rDzt/hQAAAABJRU5ErkJggg==",
         "armour": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAADFBMVEV8gPR8gPRwdN58gPSyMfNQAAAAAnRSTlMiAaYmu44AAABESURBVHicfcQxDcAgFEXR27kzJtoBC00l/GCow/fSsGCJEQmE5YEClsMT0sHl9hPdOrGei1EWUueWGq/0YZJvyNlJECa0QCW9jIhgGgAAAABJRU5ErkJggg==",
         "breath": "data:image/jpeg;base64,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",
-        "cash": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEPklEQVRYhc2YbWhbVRjHf+3WD8a2odaAThMT2mraamlR7GQy2RZbSi2rXRFHhcYxPzhCnYwF6YS1bJ2iK3MSOlDQDpSJbGlxC8Ou2Ut9a4ejMmwX15TVxWXFztZuMx8sM364L7tJ7ltUcH+4H849z3meH+eec57n3JxkMsmdotz/G0Cp5QAszpi1zwWeAp4FVgIPA/cAVmARmAcuAqPACeA74C9Tnq1OcpLJpBkYK/Cq+DjMkgOXgQPis2gEY/SZcoDNQBR4SwtkKZFgYDBEd08vS4mEssshjouKfnJ0g+nMTBFwEGjSc7CUSNDu83MoGAJg7MvDPFn7uJb5UaAdWMjo0ZkZO/C1EQjAsaFTMgjAlauzeuZNol+7WqcajA04CVQYgajpgfvvMzKpEP3bjGCWAZ8BpWaDL16/adZUqVIxzjI9mG3A2my8jp//MaVdW99Kd08v4fAZeTHHZmJqQ9eK8WQpF/AKYAqwmIFYSiT49PBRXu54wxT05R9GsDszlkoCKAPi6QvYbxYkNhOj3ec3DbJvd6caCGI8v9SQYO4CvGYcnx07R92G9pQd1LH5JV2Qrb5X9Fx6xfgyTAPCKaurcPgMtfWtRKYvAdC13cf81Pfs37uLP+MTBPsDbGxpBGBjSyPDR/qNQBDjNsDtNdOHcNTrgng2eOV213YfO3ds0x6QnQ5gdW6RZqZazzI2E0sBAaiqdP9XIAA1IGVtYUVram/gg4x3nbt6eaK6Sl6YFyYi3Lj5B1euznJ+IsL8wu/UVD3K+gYPRbZiI5hSJUyBnuXkxWjGu8j0JRzVq42CABDsD/B8c6OeSSGYLK7aWptNBdVSi9fH2bFzhnYSzA19mCbcJa5/BTT5U+bsKnQdbn+mKHCvlmWexcLQkYNs6vAzPDIqv3eXuKhbswqX08FDD64AhFw1dPqrlHPIXeJifYNHDyaqhBlHKCM1ZXfaOfHFIS5MRAAodTnIs6gf2NbC/BSYwDs7jRbxuBJmGINzRlK5wZYeGAzR4vXJ7WB/gHXrnjFyG1bCHEeoUQ1P4YHBEH0ffcLwyCie1Stpa22m4pFSCvLv5vPBEF3vBmTbfbs7jXYRYtzjkJq13wNe0xqRXl4ayUROkrQf2Jp+O9AsIbIFMXGuSNIsIeJAt9qI9DpXTx+//7ZZEMR4camxPK2zF6gnrdpzl5UQ7A/wXN0a8iwWFuZ+Y/bXOSJT0/z8S5zX39wj21oL882CnBTjyUqHuQW8CHyLog4ur3Sn7KIiWzFFtmLKK93yVs9SUTHOLeVLtXQwhzAzk/8kionbwaTofy69Qys3xYCngWPZgLhLXNQ8Vq5nEhL9qlboRndt6Xq7B5100d0jfPpNbS9o1brXgB3Ah4D6P5gsL/5bEE5p1WgaiiFc+vswcfE3CyMpF1gFeBByWRnCjBUgZP5rCGfVGMIvkW/I+pfIHaK/AWDybB9Z7biyAAAAAElFTkSuQmCC",
+        "cash": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbBAMAAAB/+ulmAAAAKlBMVEVHcEwAAAAAAAAAAAACAgIBAQEAAAAFBQUICAgLCwsEBAQKCgoMDAwCAgLHl9ehAAAADnRSTlMA/ezKpbjbYksleTQSkj1Og4sAAAEoSURBVHichdC9S8NAGAbwd5BW2jqcZywEMrSpVvyARoxLEDxd7NZWEIQOpbRU0SEGxLUEESUOYlpbMhkXUToIFSm6CH7gEmhQcPGP8S6ttVvvph8Px3vvAzDwOHK5TwGEuOeehiNlwxT+FFppfwCY8S73MNjHn9/aTodpDKE0Xv0hWY8LV5cBLnXIBxdVxo1W/jR2i2bBh+8o1wu12KM0t6/6UIpSdvjKNMCLei4nKEmpOtWkY4b4N8bChXKk6FER1yPLLE1q9Nqjxvx9jqV2w71xD3bdBvFSI3OSMaRoUvtib/24JdZFa+ZB0dkgGBmzBGuyGK8WE943zXAl/Co4/Huus4W+1VwqTdS4s+6S9qY+/pRXexWQ623S/q8rKKFsf5n+tcGFwy++NEmsliJ1MQAAAABJRU5ErkJggg==",
         "circle": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAYAAABmBXS+AAAAnklEQVR4nISPMQrCQBQF34qlYJcmRXoLzyBYWKi9ncfzArmARe5hqkCQKNi47IeRD0mhGB3Y6g3L/KmkiSTVdT3P83wfQiiApuu6MsuyVj3BzHbAlXceZnb0XTHGJRD5jqWU1gJOI8LAOQAXSYXGSR7ND8HBpeqPVHnTAniOhQMrl/xtgPZDuAMH3z18+HYmadsf0UgqJd18eAUAAP//IZG88q0ZEVAAAAAASUVORK5CYII=",
         "health": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEVHcEy/fH29eXmrUlLAfn+xX1+rUlJJF7zJAAAABnRSTlMAsLryp+mCfnY3AAAAUklEQVR4nGWOywmAMBBER0kBiehdA1YQ8G4J2oLw+i9B8iEhZC77YHdnRpIJwSpqhj3BNICBeHO7DR63iiJdeX4N6mrxJ7z+aO/J0PbONTTX+AG7CBfyGL6wPgAAAABJRU5ErkJggg==",
         "hunger": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAMAAAAGyf7hAAAATlBMVEVHcEwHBwcAAAAAAAAAAAAvLy8+Pj5VVVUAAACNjY0AAAAAAAAAAACzs7OhoaEAAADg4OAAAABubm65ubnn5+c8PDz///8jIyPz8/P6+vrJWVCaAAAAFnRSTlMA/ou/VPz+/hL92qno/f1p/jP9/f79GYYcmQAAAMVJREFUeJx9kVkWgyAMAAmirGpdGuT+F22SYou+vs6HwpCEAEr9Y9HXuTb0MYGHcf7ItFRpwJzShe4tXWhqLMkpE2mha6u62/83sbsiW6Xct4A0FTy2ZImMeWgBzaEzDPZLDwDUrEsTlgexc/YTvE98yuxBWAt6mNAHOSXYiSAxwoqj7K9hpDzKt5ncxiVVpAzEI3MBW3aIjh3HYdlG4th7dgq2pvMyJLkTiTsqlq+b4PU1V6pj6UFXzsfA4r8Pc0Jx8929AKhHDdhRLBF0AAAAAElFTkSuQmCC",
@@ -254,7 +254,7 @@ const oldRadmirConfig = {
       .Old-Fixed-Logo img{
        width:22.92vh;
        height:8.2vh;
-       margin-right:5vh
+       margin-right:4vh
       }
 
       /* ------- ЦВЕТ Х3-Х2 ------- */
@@ -270,7 +270,7 @@ const oldRadmirConfig = {
        color: #fff;
        align-items: center;
        justify-content: center;
-       font-family: 'GothamPro Medium';
+       font-family: 'Gotham Pro italic ';
        font-weight: 900;
        font-size: 1.3vh;
       }
@@ -417,17 +417,17 @@ const oldRadmirConfig = {
         box-shadow: #ffffff79 0 0 5px 0
       }
       .Old-Fixed-Param.health .old-param__icon{
-       margin-left: 20px
+       margin-left: 10px
       }
       .Old-Fixed-Param.armour .old-param__icon{
-       margin-left: 14px
+       margin-left: 10px
       }
       .Old-Fixed-Param.hunger .old-param__icon{
-       margin-left: 0.1px
+       margin-left: 10px
       }
       .Old-Fixed-Param.breath .old-param__icon{
-       width:1.7vh;
-       height:1.7vh
+       width:1vh;
+       height:1vh
       }
       .Old-Fixed-Wanted{
        position:relative;
@@ -1335,63 +1335,476 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
         }, 100);
     }
     initializeHudProxy();
-    createHud();
-    window.onInfoChange = onInfoChange;
-    setTimeout(() => {
-        hudElements.forEach(el => el.remove());
-        if (hudScript) {
-            hudScript.remove();
+    const oldRadmirHud = {
+  data: {
+    'hudEl': null,
+    'moneyEl': null,
+    'hpEl': {
+      'value': null,
+      'progress': null
+    },
+    'armourEl': {
+      'value': null,
+      'progress': null
+    },
+    'hungerEl': {
+      'value': null,
+      'progress': null
+    },
+    'breathEl': {
+      'wrapper': null,
+      'value': null,
+      'progress': null
+    },
+    'wanted': {
+      'wrapper': null,
+      'els': []
+    },
+    'weaponEl': {
+      'ammoEl': null,
+      'icon': null
+    },
+    'server': {
+      'wrapper': null,
+      'image': null
+    },
+    'freeze': {
+      'wrapper': null,
+      'fill': null
+    },
+    'bonusEl': null,
+    'radarEl': null,
+    'greenZoneEl': null
+  },
+  createHud() {
+    this.data.radarEl = document.querySelector(".OLDRADMIR-radar");
+    this.data.hudEl = document.querySelector(".OLDRADMIR-hud");
+    this.data.moneyEl = document.querySelector("#OLDRADMIR-cash__value");
+    [this.data.hpEl.progress, this.data.hpEl.value] = [document.querySelector(".OLDRADMIR-param__health .OLDRADMIR-progress__value"), document.querySelector(".OLDRADMIR-param__health .OLDRADMIR-param__amount")];
+    [this.data.armourEl.progress, this.data.armourEl.value] = [document.querySelector(".OLDRADMIR-param__armour .OLDRADMIR-progress__value"), document.querySelector(".OLDRADMIR-param__armour .OLDRADMIR-param__amount")];
+    [this.data.hungerEl.progress, this.data.hungerEl.value] = [document.querySelector(".OLDRADMIR-param__hunger .OLDRADMIR-progress__value"), document.querySelector(".OLDRADMIR-param__hunger .OLDRADMIR-param__amount")];
+    [this.data.breathEl.wrapper, this.data.breathEl.progress, this.data.breathEl.value] = [document.querySelector(".OLDRADMIR-param__breath"), document.querySelector(".OLDRADMIR-param__breath .OLDRADMIR-progress__value"), document.querySelector(".OLDRADMIR-param__breath .OLDRADMIR-param__amount")];
+    [this.data.wanted.wrapper, this.data.wanted.els] = [document.querySelector(".OLDRADMIR-hud__wanted"), document.querySelector(".OLDRADMIR-wanted__row").children];
+    this.data.weaponEl.ammoEl = document.querySelector(".OLDRADMIR-weapon__ammo").children;
+    this.data.server.wrapper = document.querySelector(".OLDRADMIR-logo");
+    this.data.server.image = this.data.server.wrapper.children[0];
+    this.data.bonusEl = document.querySelector(".OLDRADMIR-logo__bonus");
+    this.data.greenZoneEl = document.querySelector(".OLDRADMIR-green-zone");
+    this.data.weaponEl.icon = document.querySelector(".OLDRADMIR-weapon__icon");
+    this.data.freeze.wrapper = document.querySelector(".OLDRADMIR-freeze");
+    this.data.freeze.fill = document.querySelector(".OLDRADMIR-fill");
+    this.data.hudEl.style.transform = "scale(" + this.getScale() + ")";
+    this.data.radarEl.style.transform = "scale(" + this.getScale() + ")";
+    this.data.server.wrapper.style.transform = "scale(" + this.getScale() + ")";
+    this.data.greenZoneEl.style.transform = "scale(" + this.getScale() + ")";
+  },
+  getScale() {
+    const {
+      clientWidth: A,
+      clientHeight: e
+    } = document.documentElement;
+    return (A + e) / 3000;
+  },
+  onInfoChange(e, t) {
+    if ((e == "show" || e == "showBars") && +t >= 1) {
+      this.data.hudEl.style.display = "";
+    }
+    if ((e == "show" || e == "showBars") && +t === 0) {
+      this.data.hudEl.style.display = "none";
+    }
+    if ((e == "show" || e == "showBars") && +t >= 1) {
+      this.data.radarEl.style.display = "";
+    }
+    if ((e == "show" || e == "showBars") && +t === 0) {
+      this.data.radarEl.style.display = "none";
+    }
+    if (e == "weapon") {
+      this.data.weaponEl.icon.src = window.oldRadmirConfig.weapon[t];
+    }
+    if (e === "weapon" && t >= 16) {
+      this.data.weaponEl.ammoEl[0].style.display = "";
+      this.data.weaponEl.ammoEl[1].style.display = "";
+    }
+    if (e === "weapon" && t < 16) {
+      this.data.weaponEl.ammoEl[0].style.display = "none";
+      this.data.weaponEl.ammoEl[1].style.display = "none";
+    }
+    if (e == "showGreenZoneTab") {
+      this.data.greenZoneEl.style.display = "";
+    }
+    if (e == "hideGreenZoneTab") {
+      this.data.greenZoneEl.style.display = "none";
+    }
+    if (e == "health") {
+      this.data.hpEl.progress.style.width = t + "%";
+      this.data.hpEl.value.innerText = t;
+    }
+    if (e == "armour") {
+      this.data.armourEl.progress.style.width = t + "%";
+      this.data.armourEl.value.innerText = t;
+    }
+    if (e == "hunger") {
+      this.data.hungerEl.progress.style.width = t + "%";
+      this.data.hungerEl.value.innerText = t;
+    }
+    if (e == "breath") {
+      if (t < 99) {
+        this.data.breathEl.wrapper.style.display = "";
+      } else {
+        this.data.breathEl.wrapper.style.display = "none";
+      }
+      this.data.breathEl.progress.style.width = t + "%";
+      this.data.breathEl.value.innerText = t;
+    }
+    if (e == "money") {
+      this.data.moneyEl.innerHTML = t.toLocaleString("DE");
+    }
+    if (e == "wanted") {
+      if (t === 0 && !oldRadmirConfig.wantedAlwaysShow) {
+        this.data.wanted.wrapper.style.display = "none";
+        return;
+      }
+      this.data.wanted.wrapper.style.display = "";
+      for (let a = 0; a < 6; a += 1) {
+        if ((5 - a) / t >= 1 || 5 - a == 0 && t == 0) {
+          this.data.wanted.els[a].src = window.oldRadmirConfig.icons.inactive_wanted;
+          this.data.wanted.els[a].className = "OLDRADMIR-wanted__inactive";
+        } else {
+          this.data.wanted.els[a].src = window.oldRadmirConfig.icons.active_wanted;
+          this.data.wanted.els[a].className = "OLDRADMIR-wanted__active";
         }
-        if (hudStyleElement) {
-            hudStyleElement.remove();
-        }
-    });
-  };
-AddHud()
-
-
-
-    // === Квадратный спидометр (CSS через JS) ===
-    (function () {
-        const css = `
-    body #app .hud-radmir-speedometer {
-        width: 20vh;
-        height: 20vh;
-        background: rgba(0,0,0,0.7);
+      }
+    }
+    if (e == "ammoInClip") {
+      this.data.weaponEl.ammoEl[0].innerText = t;
+    }
+    if (e == "totalAmmo") {
+      this.data.weaponEl.ammoEl[1].innerText = t;
+    }
+    if (e == "setServer") {
+      if (t <= 0) {
+        return this.data.server.wrapper.style.display = "none";
+      }
+      if (t > 0 && this.data.server.wrapper.style.display == "none") {
+        this.data.server.wrapper.style.display = "";
+      }
+      this.data.server.image.src = window.oldRadmirConfig.logo[t];
+    }
+    if (e == "setBonus") {
+      if (t <= 1) {
+        this.data.bonusEl.style.display = "none";
+      } else {
+        this.data.bonusEl.style.display = "";
+      }
+      this.data.bonusEl.innerText = "x" + t;
+    }
+    if (!("isShowFreeze" !== e || t)) {
+      this.data.freeze.wrapper.style.display = "none";
+    }
+    if ("isShowFreeze" === e && t) {
+      this.data.freeze.wrapper.style.display = '';
+    }
+    if ("freeze" == e) {
+      this.data.freeze.fill.style.width = t + "%";
+    }
+  },
+  setStyles() {
+    const s = document.createElement("style");
+    s.innerHTML = `#app .hud-radmir-wanted {
+              display: none;
+          }
+          .OLDRADMIR-logo {
+              position: absolute;
+              right: 4vh;
+              top: 3vh;
+              transform-origin: top right;
+          }
+          .OLDRADMIR-logo__image {
+              width: 200px;
+          }
+          .OLDRADMIR-logo__bonus {
+              background: radial-gradient(93.1% 93.1% at 126.72% 6.9%, #eb00ff 0, #eb00ff00 100%), linear-gradient(129.39deg, #f5be09 30.88%, #e9651b 98.06%);
+              width: 32px;
+              height: 32px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 16px;
+              color: #fff;
+              font-weight: 700;
+              position: absolute;
+              bottom: -5px;
+              right: -2px;
+              border-radius: 50%;
+              font-style: italic;
+              font-weight: 900;
+          }
+          .OLDRADMIR-hud {
+              transform-origin: right bottom;
+              position: absolute;
+              right: 0;
+              top: 20px;
+          }
+          .OLDRADMIR-weapon__back {
+              position: absolute;
+              right: 45px;
+              top: 106px;
+          }
+          .OLDRADMIR-weapon__icon {
+              position: absolute;
+              right: 62px;
+              top: 121px;
+          }
+          .OLDRADMIR-weapon__ammo {
+              position: absolute;
+              right: 90px;
+              top: 220px;
+              color: #fff;
+              width: 80px;
+              text-align: center;
+          }
+          .OLDRADMIR-weapon__ammo #OLDRADMIR-ammo__in-clip {
+              font-family: GothamPro;
+              font-weight: 900;
+              font-style: italic;
+              font-size: 25px;
+              margin-right: 8px;
+              text-shadow: 0 0 5px #00000080;
+          }
+          .OLDRADMIR-weapon__ammo #OLDRADMIR-ammo__total {
+              font-family: GothamPro;
+              font-weight: 300;
+              font-style: italic;
+              font-size: 18px;
+              text-shadow: 0 0 5px #000000b3;
+          }
+          .OLDRADMIR-hud .OLDRADMIR-hud__cash {
+              position: absolute;
+              right: 240px;
+              top: 138px;
+              display: inline-flex;
+              align-items: center;
+          }
+          .OLDRADMIR-cash__icon {
+              margin-right: 13px;
+              margin-top: 1px;
+          }
+          .OLDRADMIR-hud__cash #OLDRADMIR-cash__value {
+              font-family: GothamPro;
+              font-weight: 900;
+              font-style: italic;
+              color: #fff;
+              display: inline-block;
+              font-size: 28px;
+              text-shadow: 0 0 5px #00000080;
+          }
+          .OLDRADMIR-hud .OLDRADMIR-hud__params {
+              width: 170px;
+              position: absolute;
+              top: 180px;
+              right: 255px;
+          }
+          .OLDRADMIR-param__armour,
+          .OLDRADMIR-param__breath,
+          .OLDRADMIR-param__hunger {
+              margin-top: 10px;
+          }
+          .OLDRADMIR-param {
+              display: inline-flex;
+              align-items: center;
+          }
+          .OLDRADMIR-param__icon {
+              margin-right: 12px;
+          }
+          .OLDRADMIR-param__progress,
+          .OLDRADMIR-progress__value {
+              width: 100px;
+              height: 5px;
+              background-color: #0000004d;
+              border-radius: 5px;
+          }
+          .OLDRADMIR-progress__value {
+              border-radius: 5px;
+          }
+          .OLDRADMIR-param__circle {
+              float: right;
+              margin-top: -2.5px;
+              margin-right: -3px;
+          }
+          .OLDRADMIR-param__amount {
+              font-family: GothamPro;
+              font-weight: 300;
+              font-style: italic;
+              margin-left: 10px;
+              width: 35px;
+              text-align: left;
+              color: #fff;
+              font-size: 18px;
+              text-shadow: 0 0 5px #000000b3;
+          }
+          .OLDRADMIR-param__health {
+              margin-left: 20px;
+          }
+          .OLDRADMIR-param__health .OLDRADMIR-progress__value {
+              width: 50%;
+              background-color: #ed2e2e;
+              box-shadow: rgba(237, 46, 46, 0.5) 0 0 5px 0;
+          }
+          .OLDRADMIR-param__armour {
+              margin-left: 14px;
+          }
+          .OLDRADMIR-param__armour .OLDRADMIR-param__icon {
+              margin-right: 13px;
+          }
+          .OLDRADMIR-param__armour .OLDRADMIR-progress__value {
+              width: 50%;
+              background-color: #526ee6;
+              box-shadow: rgba(82, 110, 230, 0.5) 0 0 5px 0;
+          }
+          .OLDRADMIR-param__hunger {
+              margin-left: 1px;
+          }
+          .OLDRADMIR-param__hunger .OLDRADMIR-progress__value {
+              width: 50%;
+              box-shadow: hsl(26deg 100% 59% / 30%) 0 0 5px 0;
+              background-color: #ff872e;
+          }
+          .OLDRADMIR-param__breath {
+              margin-left: 3px;
+          }
+          .OLDRADMIR-param__breath .OLDRADMIR-progress__value {
+              width: 99%;
+              background-color: #fff;
+              box-shadow: rgba(255, 255, 255, 0.5) 0 0 5px 0;
+          }
+          .OLDRADMIR-hud__wanted {
+              position: absolute;
+              right: 70px;
+              top: 250px;
+          }
+          .OLDRADMIR-wanted__back {
+              position: absolute;
+              right: 0;
+              top: 25px;
+          }
+          .OLDRADMIR-wanted__row {
+              display: flex;
+              flex-direction: row;
+              position: absolute;
+              right: 15px;
+              top: 32px;
+          }
+          .OLDRADMIR-wanted__row > img {
+              padding: 2px 3px 2px 3px;
+          }
+          .OLDRADMIR-hud__wanted--always-show .OLDRADMIR-wanted__inactive {
+              opacity: 0.3;
+          }
+          .OLDRADMIR-green-zone {
+              position: absolute;
+              left: 3.2vw;
+              bottom: 23vh;
+              display: flex;
+              align-items: center;
+          }
+          .OLDRADMIR-green-zone__image {
+              margin-right: 10px;
+          }
+          .OLDRADMIR-green-zone__text {
+              color: #fff;
+              text-shadow: 3px 3px 5px #00000080;
+          }
+          .OLDRADMIR-green-zone__text div:first-child {
+              font-size: 13px;
+              font-weight: 900;
+              text-transform: uppercase;
+          }
+          .OLDRADMIR-green-zone__text div:last-child {
+              color: hsl(0deg 0% 100% / 70%);
+              font-size: 12px;
+              font-weight: 500;
+              margin-top: 5px;
+          }
+          .OLDRADMIR-freeze {
+        position: absolute;
+        background: hsl(190deg 63% 66% / 40%);
+        width: 26.1111vh;
+        height: 0.65vh;
         border-radius: 1vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    body #app .hud-radmir-speedometer-main__data {
-        position: relative;
-        top: auto;
-        left: auto;
-        flex-direction: column !important;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body #app .hud-radmir-speedometer-main__data-value {
-        font-size: 4vh;
-        font-weight: 700;
-        color: #00ffcc; /* цифры скорости */
-        text-shadow: none;
-    }
-
-    body #app .hud-radmir-speedometer-main__data-text {
-        font-size: 2vh;
-        font-weight: 400;
-        color: #bbb;
-        text-shadow: none;
-        margin-top: .5vh;
-    }
-    `;
-
-        // Вставляем CSS в <head>
-        const style = document.createElement("style");
-        style.innerHTML = css;
-        document.head.appendChild(style);
-    })();
+        outline: hsl(0deg 0% 0% / 20%) 0.2vh solid;
+        outline-offset: 0.1vh;
+        overflow: hidden;
+        left: 11.16vh;
+        bottom: 3vh;
+          }
+          .OLDRADMIR-fill {
+              height: 100%;
+              width: 0%;
+              background: hsl(190deg 63% 66%);
+          }
+          #app\x20.hud-radmir-radar__radar-border {width: 0%;height: 0%;position: absolute}#app\x20.hud-radmir-radar__radar-border_new-year{position:absolute;width:0%;height:0%;pointer-events:none}
+          `;
+    document.head.appendChild(s);
+  },
+  init() {
+    this.setStyles();
+    const s =
+            '<div class="OLDRADMIR-logo"> <img src="oldRadmirHud/logo/1.png" class="OLDRADMIR-logo__image"> <div class="OLDRADMIR-logo__bonus">x2</div> </div><div class="OLDRADMIR-freeze"><div class="OLDRADMIR-fill"></div></div> <div class="OLDRADMIR-hud"> <div class="OLDRADMIR-hud__weapon"> <img src="' +
+            window.oldRadmirConfig.icons.weapon_back +
+            '" alt="" class="OLDRADMIR-weapon__back"> <img src="oldRadmirHud/weapon/0.png" alt="" class="OLDRADMIR-weapon__icon"> <div class="OLDRADMIR-weapon__ammo"> <span id="OLDRADMIR-ammo__in-clip">1</span> <span id="OLDRADMIR-ammo__total">1</span> </div> </div> <div class="OLDRADMIR-hud__cash"> <img src="' +
+            window.oldRadmirConfig.icons.cash +
+            '" alt="" class="OLDRADMIR-cash__icon"> <div id="OLDRADMIR-cash__value">0</div> </div> <div class="OLDRADMIR-hud__params"> <div class="OLDRADMIR-param__health OLDRADMIR-param"> <img src="' +
+            window.oldRadmirConfig.icons.health +
+            '" alt="" class="OLDRADMIR-param__icon"> <div class="OLDRADMIR-param__progress"> <div class="OLDRADMIR-progress__value"> <img src="' +
+            window.oldRadmirConfig.icons.circle +
+            '" alt="" class="OLDRADMIR-param__circle"> </div> </div> <span class="OLDRADMIR-param__amount">50</span> </div> <div class="OLDRADMIR-param__armour OLDRADMIR-param"> <img src="' +
+            window.oldRadmirConfig.icons.armour +
+            '" alt="" class="OLDRADMIR-param__icon"> <div class="OLDRADMIR-param__progress"> <div class="OLDRADMIR-progress__value"> <img src="' +
+            window.oldRadmirConfig.icons.circle +
+            '" alt="" class="OLDRADMIR-param__circle"> </div> </div><span class="OLDRADMIR-param__amount">0</span> </div> <div class="OLDRADMIR-param__hunger OLDRADMIR-param"> <img src="' +
+            window.oldRadmirConfig.icons.hunger +
+            '" alt="" class="OLDRADMIR-param__icon"> <div class="OLDRADMIR-param__progress"> <div class="OLDRADMIR-progress__value"> <img src="' +
+            window.oldRadmirConfig.icons.circle +
+            '" alt="" class="OLDRADMIR-param__circle"> </div> </div><span class="OLDRADMIR-param__amount">0</span> </div> <div class="OLDRADMIR-param__breath OLDRADMIR-param"> <img src="' +
+            window.oldRadmirConfig.icons.breath +
+            '" alt="" class="OLDRADMIR-param__icon"> <div class="OLDRADMIR-param__progress"> <div class="OLDRADMIR-progress__value"> <img src="' +
+            window.oldRadmirConfig.icons.circle +
+            '" alt="" class="OLDRADMIR-param__circle"> </div> </div><span class="OLDRADMIR-param__amount">99</span> </div> </div> <div class="OLDRADMIR-hud__wanted"> <img src="' +
+            window.oldRadmirConfig.icons.wanted_back +
+            '" alt="" class="OLDRADMIR-wanted__back"> <div class="OLDRADMIR-wanted__row"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__inactive"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__inactive"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__inactive"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__active"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__active"> <img src="' +
+            window.oldRadmirConfig.icons.active_wanted +
+            '" alt="" class="OLDRADMIR-wanted__active"> </div> </div> </div> <div class="OLDRADMIR-green-zone"> <img src="' +
+            window.oldRadmirConfig.icons.zone +
+            '" alt="" class="OLDRADMIR-green-zone__image"> <div class="OLDRADMIR-green-zone__text"> <div>Безопасная зона</div> <div>Вы находитесь в безопасной зоне.</div> </div> </div>' +
+            '"<img src="" class="OLDRADMIR-radar">',
+        t = jsLoader.hud.addNewHud(s, "OLDRADMIR", (e, t) => void this.onInfoChange(e, t));
+    this.createHud();
+    (interface("Hud").info.health = interface("Hud").info.health),
+        (interface("Hud").info.armour = interface("Hud").info.armour),
+        (interface("Hud").info.hunger = interface("Hud").info.hunger),
+        (interface("Hud").info.breath = interface("Hud").info.breath),
+        (interface("Hud").info.ammoInClip = interface("Hud").info.ammoInClip),
+        (interface("Hud").info.totalAmmo = interface("Hud").info.totalAmmo),
+        (interface("Hud").info.money = interface("Hud").info.money),
+        (interface("Hud").info.wanted = interface("Hud").info.wanted),
+        (interface("Hud").info.weapon = interface("Hud").info.weapon),
+        (interface("Hud").info.show = 0),
+        (interface("Hud").info.setBonus = 0),
+        interface("Hud").hideGreenZoneTab();
+    jsLoader.chat.send('/hudscalefix'),
+    jsLoader.log.makeLog("OLD_RADMIR_HUD", "[hud init] Inited!");
+},
+};
+oldRadmirHud.init();
+jsLoader.showConnectedScript("success", `gta 3`, "Fixed - https://vk.com/asioll");
+}
