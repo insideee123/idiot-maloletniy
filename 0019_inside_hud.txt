@@ -1286,80 +1286,6 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
                 icon.classList.add("wanted-innactive");
             }
         });
-(function () {
-
-    let greenZoneEl = null;
-
-    function findOrCreateZZ() {
-        if (greenZoneEl) return;
-
-        const radar =
-            document.querySelector('.old-radar') ||
-            document.querySelector('.hud-radmir-radar');
-
-        if (!radar) return;
-
-        greenZoneEl = document.createElement('div');
-        greenZoneEl.className = 'old-zz';
-        greenZoneEl.style.display = 'none';
-
-        greenZoneEl.innerHTML = `
-            <img class="old-zz__icon"
-                 src="${oldRadmirConfig?.icons?.zone || ''}">
-        `;
-
-        radar.appendChild(greenZoneEl);
-    }
-
-    function ensureStyles() {
-        if (document.getElementById('old-zz-style')) return;
-
-        const style = document.createElement('style');
-        style.id = 'old-zz-style';
-        style.innerHTML = `
-            .old-zz {
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                z-index: 5;
-            }
-
-            .old-zz__icon {
-                width: 4.5vh;
-                height: 4.5vh;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    function showZZ() {
-        if (greenZoneEl) greenZoneEl.style.display = '';
-    }
-
-    function hideZZ() {
-        if (greenZoneEl) greenZoneEl.style.display = 'none';
-    }
-
-    // self-init
-    setInterval(() => {
-        findOrCreateZZ();
-        ensureStyles();
-    }, 500);
-
-    // ⚠️ ПОДКЛЮЧЕНИЕ К СУЩЕСТВУЮЩЕМУ onInfoChange
-    const _onInfoChange = window.onInfoChange;
-
-    window.onInfoChange = function (e, a) {
-        if (e === 'showGreenZoneTab') showZZ();
-        if (e === 'hideGreenZoneTab') hideZZ();
-
-        if (typeof _onInfoChange === 'function') {
-            _onInfoChange(e, a);
-        }
-    };
-
-})();
-
     }
     function initializeHudProxy() {
         const checkInterval = setInterval(() => {
@@ -1405,6 +1331,12 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
             hudStyleElement.remove();
         }
     });
+    setTimeout(() => {
+    if (window.interface && window.interface("Hud")) {
+        window.interface("Hud").showGreenZoneTab?.();
+        window.interface("Hud").greenZone = true;
+    }
+}, 600);
   };
 AddHud()
 
