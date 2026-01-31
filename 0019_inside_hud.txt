@@ -1128,7 +1128,6 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
         </div>
       </div>
       <div class="Old-Fixed-HudBottom">
-      <div class="Old-Fixed-ZZ"><img src="${oldRadmirConfig.icons.zone}" class="Old-Fixed-ZZ_icon"></div>
       <div class="Old-Fixed-Freeze">
       <span class="Old-Fixed-Freeze_text">Freeze:</span>
       <span class="Old-Fixed-Freeze_value">100</span>
@@ -1246,12 +1245,7 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
                 freezeEl.style.display = isVisible ? "/" : "none";
             }
         },*/
-        greenZone: (isVisible) => {
-            const greenZoneEl = document.querySelector(".Old-Fixed-ZZ");
-            if (greenZoneEl) {
-                greenZoneEl.style.display = isVisible ? "/" : "none";
-            }
-        },
+    
     };
     function onInfoChange(type, value) {
         setTimeout(() => {
@@ -1292,14 +1286,12 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
                 icon.classList.add("wanted-innactive");
             }
         });
-// ==================================================
-// ZZ ICON — ONLY ICON, NO ZONE LOGIC, NO EVENTS
-// ==================================================
-
 (function () {
 
-    function ensureZZIcon() {
-        let zz = document.querySelector('.Old-Fixed-ZZ');
+    let greenZoneEl = null;
+
+    function findOrCreateZZ() {
+        if (greenZoneEl) return;
 
         const radar =
             document.querySelector('.old-radar') ||
@@ -1307,53 +1299,66 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
 
         if (!radar) return;
 
-        // если элемента нет — создаём
-        if (!zz) {
-            zz = document.createElement('div');
-            zz.className = 'Old-Fixed-ZZ';
+        greenZoneEl = document.createElement('div');
+        greenZoneEl.className = 'old-zz';
+        greenZoneEl.style.display = 'none';
 
-            zz.innerHTML = `
-                <img class="Old-Fixed-ZZ_icon"
-                     src="${oldRadmirConfig?.icons?.zone || ''}">
-            `;
+        greenZoneEl.innerHTML = `
+            <img class="old-zz__icon"
+                 src="${oldRadmirConfig?.icons?.zone || ''}">
+        `;
 
-            radar.appendChild(zz);
-        }
+        radar.appendChild(greenZoneEl);
     }
 
-    function ensureZZStyles() {
-        let style = document.getElementById('zz-style');
+    function ensureStyles() {
+        if (document.getElementById('old-zz-style')) return;
 
-        if (!style) {
-            style = document.createElement('style');
-            style.id = 'zz-style';
-            document.head.appendChild(style);
-        }
-
+        const style = document.createElement('style');
+        style.id = 'old-zz-style';
         style.innerHTML = `
-            .Old-Fixed-ZZ {
-                position: absolute !important;
-                left: 0 !important;
-                bottom: 0 !important;
+            .old-zz {
+                position: absolute;
+                left: 0;
+                bottom: 0;
                 z-index: 5;
-                pointer-events: none;
             }
 
-            .Old-Fixed-ZZ_icon {
+            .old-zz__icon {
                 width: 4.5vh;
                 height: 4.5vh;
             }
         `;
+        document.head.appendChild(style);
     }
 
-    // self-healing, НИЧЕГО ДРУГОГО НЕ ТРОГАЕТ
+    function showZZ() {
+        if (greenZoneEl) greenZoneEl.style.display = '';
+    }
+
+    function hideZZ() {
+        if (greenZoneEl) greenZoneEl.style.display = 'none';
+    }
+
+    // self-init
     setInterval(() => {
-        ensureZZIcon();
-        ensureZZStyles();
+        findOrCreateZZ();
+        ensureStyles();
     }, 500);
 
-})();
+    // ⚠️ ПОДКЛЮЧЕНИЕ К СУЩЕСТВУЮЩЕМУ onInfoChange
+    const _onInfoChange = window.onInfoChange;
 
+    window.onInfoChange = function (e, a) {
+        if (e === 'showGreenZoneTab') showZZ();
+        if (e === 'hideGreenZoneTab') hideZZ();
+
+        if (typeof _onInfoChange === 'function') {
+            _onInfoChange(e, a);
+        }
+    };
+
+})();
 
     }
     function initializeHudProxy() {
@@ -1403,64 +1408,3 @@ body .authorization{background:0 0}#app .authorization{background-image:url("dat
   };
 AddHud()
 
-// ==================================================
-// ZZ ICON — ONLY ICON, NO ZONE LOGIC, NO EVENTS
-// ==================================================
-
-(function () {
-
-    function ensureZZIcon() {
-        let zz = document.querySelector('.Old-Fixed-ZZ');
-
-        const radar =
-            document.querySelector('.old-radar') ||
-            document.querySelector('.hud-radmir-radar');
-
-        if (!radar) return;
-
-        // если элемента нет — создаём
-        if (!zz) {
-            zz = document.createElement('div');
-            zz.className = 'Old-Fixed-ZZ';
-
-            zz.innerHTML = `
-                <img class="Old-Fixed-ZZ_icon"
-                     src="${oldRadmirConfig?.icons?.zone || ''}">
-            `;
-
-            radar.appendChild(zz);
-        }
-    }
-
-    function ensureZZStyles() {
-        let style = document.getElementById('zz-style');
-
-        if (!style) {
-            style = document.createElement('style');
-            style.id = 'zz-style';
-            document.head.appendChild(style);
-        }
-
-        style.innerHTML = `
-            .Old-Fixed-ZZ {
-                position: absolute !important;
-                left: 0 !important;
-                bottom: 0 !important;
-                z-index: 5;
-                pointer-events: none;
-            }
-
-            .Old-Fixed-ZZ_icon {
-                width: 4.5vh;
-                height: 4.5vh;
-            }
-        `;
-    }
-
-    // self-healing, НИЧЕГО ДРУГОГО НЕ ТРОГАЕТ
-    setInterval(() => {
-        ensureZZIcon();
-        ensureZZStyles();
-    }, 500);
-
-})();
