@@ -360,7 +360,7 @@ const oldRadmirConfig = {
       }
       .Old-Param-Progress,.Old-Progress__Values{
        width:9.40vh;
-       height:.40vh;
+       height:.30vh;
        background-color: #0000004d;
        border-radius:.46vh
       }
@@ -419,13 +419,13 @@ const oldRadmirConfig = {
         box-shadow: #ffffff79 0 0 5px 0
       }
       .Old-Fixed-Param.health .old-param__icon{
-       width: 1.35vh;height: 1.35vh;
+       width: 1.25vh;height: 1.35vh;
       }
       .Old-Fixed-Param.armour .old-param__icon{
-       width: 1.35vh;height: 1.35vh;
+       width: 1.25vh;height: 1.35vh;
       }
       .Old-Fixed-Param.hunger .old-param__icon{
-       width: 1.35vh;height: 1.35vh;
+       width: 1.40vh;height: 1.35vh;
       }
       .Old-Fixed-Param.breath .old-param__icon{
        width: .85vh;height: .95vh;
