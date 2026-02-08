@@ -477,6 +477,12 @@ body #app .hud-radmir-info { display: none; }
     bottom: 2.7778vh;
 }
 
+/* ---------- Овальный ----------*/ #app .hud-radmir-radar__map { width: 26.3vh !important; height: 16.9vh !important; overflow: hidden; display: flex; justify-content: center; align-items: center; border-radius: 100%; border: none } body #app .hud-radmir-radar__map { transition: .3s } #app .hud-hassle-map { width: 32vh !important; height: 32vh !important } #app .hud-radmir-radar__radar { width: 26.3vh } #app .hud-radmir-radar { left: 7.3vh; bottom: 4.03vh }
+
+body .OLD-RADMIR-logo__bonus {
+    background: #000000c5
+}
+
 /*----- JS INSIDE -----*/
 background-size: auto 100vh;
 }
@@ -1349,11 +1355,10 @@ AddHud();
     `;
     customZone.style.cssText = `
         position: absolute;
-        left: 2%;
-        bottom: 7vh;
-        transform: translateX(-20%);
-        transform: translateY(10%);
-        display: none;
+        left: 1.5vh;
+        bottom: 1vh;
+        display: flex;
+        align-items: center;
         z-index: 999999;
     `;
     document.body.appendChild(customZone);
