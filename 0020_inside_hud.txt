@@ -1346,8 +1346,7 @@ AddHud();
     /* === СКРЫВАЕМ СТАРЫЙ GREEN ZONE HUD === */
     const style = document.createElement('style');
     style.textContent = `
-        [class*="green"], [class*="zone"], .hud-radmir-greenzone,
-        .green-zone, .gzone, .map__greenzone, 
+        [class*="green"], [class*="zone"], 
         svg[class*="zone"], svg[class*="green"],
         #app .hud-circle-green{
             display: none !important;
