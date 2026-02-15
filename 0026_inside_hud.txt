@@ -417,27 +417,49 @@ justify-content: center;
     text-shadow: 0 0 .46vh #000000b3;
 }
     .Old-Fixed-Params {
-    height: 13vh;
-    position: relative;
-    z-index: 1;
-}
-.Old-Fixed-Cash {
-    justify-content: flex-end;
-    color: white;
-    font-family: "GothamPro Black Italic";
-    font-style: italic;
-    font-size: 2.59vh;
-    text-shadow: 0 0 .46vh #00000080;
-}
-.Old-Fixed-Cash img {
-    margin-right: 13px;
-    margin-top: 1px;
-}
+    display: flex;
+        align-items: center;
+        z-index: 99999;
+      }
+
+      .YORENOV-hud__cash {
+        position: absolute;
+        right: 8.8889vh;
+        top: 16.0185vh;
+        transform: scale(1,.85);
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .YORENOV-hud__cash #YORENOV-cash__value::before {
+        position: absolute;
+        content: "j";
+        font-family: ALSRubl;
+        left: -3.8889vh;
+        z-index: -1;
+        margin-top: .2778vh;
+        font-size: 5.0926vh;
+      }
+
+      .YORENOV-hud__cash #YORENOV-cash__value {
+        font-weight: 900;
+        display: inline-block;
+        letter-spacing: .2778vh;
+        font-style: normal;
+        font-size: 7.5vh;
+        font-family: SAfonts!important;
+      }
 .Old-Fixed-Params__all {
-    margin-top: 1vh;
+    margin-top: 5vh;
 }
 .Old-Fixed-Param {
-   display: flex;
+width: 16.2037vh;
+        height: 1.1111vh;
+        box-shadow: #000 0 0 0 .4167vh;
+      }
+
+.Old-Param-Progress, .Old-Progress__Values {
+  display: flex;
         flex-direction: column;
         position: absolute;
         right: 4.6444vh;
@@ -445,18 +467,6 @@ justify-content: center;
         justify-content: flex-end;
         height: 9.1852vh;
         padding-bottom: .7407vh;
-      }
-.Old-Fixed-Param.health {
-   display: flex;
-        align-items: center;
-      }
-.Old-Fixed-Param.armour, .Old-Param-Values {
-    margin-left: .93vh;
-}
-.Old-Param-Progress, .Old-Progress__Values {
-  width: 16.2037vh;
-        height: 1.1111vh;
-        box-shadow: #000 0 0 0 .4167vh;
       }
 .Old-Progress__Values {
   height: 1.1111vh;
