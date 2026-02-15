@@ -1076,12 +1076,12 @@ background-size: auto 100vh;
             <img src="${oldRadmirConfig.logo[1]}">
             <div class="YORENOV-logo__bonus">x3</div>
           </div>
-          <div class="Old-Fixed-Main">
-            <div class="Old-Fixed-Params">
-              <div class="Old-Fixed-Cash"><img src="${oldRadmirConfig.icons.cash}"><span>0</span></div>
-              <div class="Old-Fixed-Params__all">
-                <div class="Old-Fixed-Param health">
-                  <img src="${oldRadmirConfig.icons.health}" class="old-param__icon">
+          <div class="YORENOV-hud__weapon">
+            <div class=YORENOV-hud__params">
+              <div class="YORENOV-hud__cash"><img src="${oldRadmirConfig.icons.cash}"><span>0</span></div>
+              <div class=""YORENOV-param__amount">
+                <div class="YORENOV-param__health">
+                  <img src="${oldRadmirConfig.icons.health}" class="YORENOV-weapon__icon">
                   <div class="Old-Param-Progress">
                     <div class="Old-Progress__Values" style="width:100%"><img src="${oldRadmirConfig.icons.circle}" class="circle"></div>
                   </div>
