@@ -264,6 +264,30 @@ function AddHud() {
       @font-face {
         font-family:PricedownRus;font-weight:400;font-style:normal;src:url(./fonts/PricedownRus.ttf) format("truetype");
       }
+             :root {
+        --bg: #000;
+        --bg-20: #00000033;
+        --bg-40: #00000066;
+        --bg-50: #00000080;
+        --bg-60: #00000099;
+        --bg-80: #000000cc;
+        --color: #fff;
+        --color-10: #ffffff1a;
+        --color-30: #ffffff4d;
+        --font-famaly-all: GothamPro,"Open Sans";
+        --add-bg: #000000cc;
+        --add-bg-2: black;
+        --progress-bg: black;
+        --item-select-active: #85171a;
+        --item-color-shadow: #85171a99;
+        --color-buttom-active: #00800066;
+        --color-buttom-hover: #0080001a;
+        --border-container: 0.1852vh solid #fff;
+        --border-container-active: 0.1852vh solid #85171a;
+        --border-seriy: 0.3704vh solid #797778;
+        --border-bottom-white: 0.4630vh solid #ffffff1a;
+        --add-text: white;
+      }
 .Old-Fixed-Hud,
 .Old-Fixed-HudTop,
 .Old-Fixed-Logo,
@@ -282,13 +306,11 @@ body #app .hud-radmir-info { display: none; }
 .hud-hassle-map .map-mask { display: none; }
 .Old-Fixed-Logo img, .Old-Fixed-HudTop { transform-origin: top right; }
 .Old-Fixed-HudTop {
-    position: absolute;
-    right: 0vh;
-    top: 5.4vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+   transform-origin: top right;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
 .Old-Fixed-Logo {
     position: relative;
     margin-bottom: 3vh;
@@ -347,13 +369,14 @@ position: absolute;
 right: -2.5926vh;
 top: 10vh;
 color: #c8e0fa;
-        width: 18.5185vh;
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: center;
+width: 18.5185vh;
+text-align: center;
+display: flex;
+flex-direction: row;
+align-items: flex-end;
+justify-content: center;
       }
+
 .Ammo-in-clip {
     font-family: 'GothamPro Bold Italic';
     font-weight: 900;
@@ -386,7 +409,7 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
  color: #36662c;
         text-shadow: 0 -.463vh 0 #000300,0 -.463vh 0 #000300,0 .463vh 0 #000300,0 .463vh 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.0926vh -.463vh 0 #000300,.0926vh -.463vh 0 #000300,-.0926vh .463vh 0 #000300,.0926vh .463vh 0 #000300,-.463vh -.0926vh 0 #000300,.463vh -.0926vh 0 #000300,-.463vh .0926vh 0 #000300,.463vh .0926vh 0 #000300,-.1852vh -.463vh 0 #000300,.1852vh -.463vh 0 #000300,-.1852vh .463vh 0 #000300,.1852vh .463vh 0 #000300,-.463vh -.1852vh 0 #000300,.463vh -.1852vh 0 #000300,-.463vh .1852vh 0 #000300,.463vh .1852vh 0 #000300,-.2778vh -.463vh 0 #000300,.2778vh -.463vh 0 #000300,-.2778vh .463vh 0 #000300,.2778vh .463vh 0 #000300,-.463vh -.2778vh 0 #000300,.463vh -.2778vh 0 #000300,-.463vh .2778vh 0 #000300,.463vh .2778vh 0 #000300,-.3704vh -.463vh 0 #000300,.3704vh -.463vh 0 #000300,-.3704vh .463vh 0 #000300,.3704vh .463vh 0 #000300,-.463vh -.3704vh 0 #000300,.463vh -.3704vh 0 #000300,-.463vh .3704vh 0 #000300,.463vh .3704vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300;
       }
-              .Old-Fixed-Cash #YORENOV-cash__value::before {
+        .Old-Fixed-Cash,.Old-Fixed-cash__value::before {
         position: absolute;
         content: "j";
         font-family: ALSRubl;
@@ -395,7 +418,7 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
         margin-top: .2778vh;
         font-size: 5.0926vh;
       }
-        .Old-Fixed-Cash #YORENOV-cash__value {
+        .Old-Fixed-Cash .Old-Fixed-cash__value {
         font-weight: 900;
         display: inline-block;
         letter-spacing: .2778vh;
@@ -403,12 +426,18 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
         font-size: 7.5vh;
         font-family: SAfonts!important;
       }
-.Old-Fixed-Cash img {
-    margin-right: 13px;
-    margin-top: 1px;
-}
-.Old-Fixed-Params__all {
-   display: flex;
+        
+      .Old-Fixed__Cash .Old-Fixed-Cash__value::before {
+        position: absolute;
+        content: "j";
+        font-family: ALSRubl;
+        left: -3.8889vh;
+        z-index: -1;
+        margin-top: .2778vh;
+        font-size: 5.0926vh;
+      }
+        .Old-Fixed-Params {
+        display: flex;
         flex-direction: column;
         position: absolute;
         right: 4.6444vh;
@@ -416,6 +445,18 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
         justify-content: flex-end;
         height: 9.1852vh;
         padding-bottom: .7407vh;
+      }
+              .Old-Fixed-Param__amount {
+        opacity: 0;
+        width: 4.6296vh;
+        color: #fff;
+        font-size: 1.6667vh;
+        font-weight: 500;
+        margin-left: -50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
       }
 .Old-Fixed-Param {
   display: flex;
