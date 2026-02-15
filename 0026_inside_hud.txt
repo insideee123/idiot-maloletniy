@@ -416,35 +416,10 @@ justify-content: center;
     font-size: 1.67vh;
     text-shadow: 0 0 .46vh #000000b3;
 }
-.Old-Fixed-Params {
-    height: 17vh;
-    position: 5vh;
-    z-index: 1;
-}
-       .Old-Fixed-Cash
-        position: absolute;
-        right: 8.8889vh;
-        top: 16.0185vh;
-        transform: scale(1,.85);
-        display: inline-flex;
-        align-items: center;
-      }
-YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::before  {
- color: #36662c;
-        text-shadow: 0 -.463vh 0 #000300,0 -.463vh 0 #000300,0 .463vh 0 #000300,0 .463vh 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.0926vh -.463vh 0 #000300,.0926vh -.463vh 0 #000300,-.0926vh .463vh 0 #000300,.0926vh .463vh 0 #000300,-.463vh -.0926vh 0 #000300,.463vh -.0926vh 0 #000300,-.463vh .0926vh 0 #000300,.463vh .0926vh 0 #000300,-.1852vh -.463vh 0 #000300,.1852vh -.463vh 0 #000300,-.1852vh .463vh 0 #000300,.1852vh .463vh 0 #000300,-.463vh -.1852vh 0 #000300,.463vh -.1852vh 0 #000300,-.463vh .1852vh 0 #000300,.463vh .1852vh 0 #000300,-.2778vh -.463vh 0 #000300,.2778vh -.463vh 0 #000300,-.2778vh .463vh 0 #000300,.2778vh .463vh 0 #000300,-.463vh -.2778vh 0 #000300,.463vh -.2778vh 0 #000300,-.463vh .2778vh 0 #000300,.463vh .2778vh 0 #000300,-.3704vh -.463vh 0 #000300,.3704vh -.463vh 0 #000300,-.3704vh .463vh 0 #000300,.3704vh .463vh 0 #000300,-.463vh -.3704vh 0 #000300,.463vh -.3704vh 0 #000300,-.463vh .3704vh 0 #000300,.463vh .3704vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300;
-      }
-       .Old-Fixed-Cash {
-        position: absolute;
-        right: 8.8889vh;
-        top: 16.0185vh;
-        transform: scale(1,.85);
-        display: inline-flex;
-        align-items: center;
-      }
-
-      .Old-Fixed-Cash.Old-Fixed-Cash__value::before {
+      .Old-Fixed-Cash {
         position: absolute;
         content: "j";
+        color: #36662c;
         font-family: ALSRubl;
         left: -3.8889vh;
         z-index: -1;
@@ -452,21 +427,12 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
         font-size: 5.0926vh;
       }
 
-      .Old-Fixed-Cash.Old-Fixed-Cash__value {
-        font-weight: 900;
-        display: inline-block;
-        letter-spacing: .2778vh;
-        font-style: normal;
-        font-size: 7.5vh;
-        font-family: "GothamPro Black Italic" !important;
-      }
-
       .Old-Fixed-Params {
         display: flex;
-        flex-direction: column !important;
+        flex-direction: column;
         position: absolute;
         right: 4.6444vh;
-        top: 7.3148vh;
+        top: 9.3148vh;
         justify-content: flex-end;
         height: 9.1852vh;
         padding-bottom: .7407vh;
