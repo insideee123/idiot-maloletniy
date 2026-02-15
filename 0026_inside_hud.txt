@@ -1120,15 +1120,15 @@ background-size: auto 100vh;
                 </div>
               </div>
             </div>
-            <div class="Old-Fixed-Weapon">
+            <div class="YORENOV-hud-base">
               <img src="${oldRadmirConfig.icons.wanted_back}" class="Old-Fixed-Weapon_back">
-              <img src="${oldRadmirConfig.weapon[0]}" class="Old-Fixed-Weapon_icon">
-              <div class="Old-Fixed-Weapon_ammo"><span class="Ammo-in-clip">0</span><span class="Ammo-full">/0</span></div>
+              <img src="${oldRadmirConfig.weapon[0]}" class="YORENOV-weapon__icon">
+              <div class="YORENOV-weapon__ammo"><span class="YORENOV-ammo__in-clip">0</span><span class="Ammo-full">/0</span></div>
             </div>
           </div>
-          <div class="Old-Fixed-Wanted">
+          <div class="YORENOV-hud__wanted">
             <img src="${oldRadmirConfig.icons.weapon_back}" class="Old-Fixed-Wanted_back">
-            <div class="Wanted_row">
+            <div class="YORENOV-wanted__row"">
               <img src="${oldRadmirConfig.icons.inactive_wanted}">
               <img src="${oldRadmirConfig.icons.inactive_wanted}">
               <img src="${oldRadmirConfig.icons.inactive_wanted}">
@@ -1227,15 +1227,15 @@ background-size: auto 100vh;
             }
         },
         ammoInClip: (value) => {
-            const inClipEl = document.querySelector(".Ammo-in-clip");
+            const inClipEl = document.querySelector("YORENOV-ammo__in-clip");
             if (inClipEl) inClipEl.textContent = value;
         },
         totalAmmo: (value) => {
-            const totalAmmoEl = document.querySelector(".Ammo-full");
+            const totalAmmoEl = document.querySelector("YORENOV-weapon__ammo");
             if (totalAmmoEl) totalAmmoEl.textContent = "-" + value;
         },
         freeze: (value) => {
-            const freezeValueEl = document.querySelector(".Old-Fixed-Freeze_value");
+            const freezeValueEl = document.querySelector("YORENOV-param__freeze YORENOV-param");
             if (freezeValueEl) {
                 const formattedValue = String(value).padStart(3, '0');
                 freezeValueEl.textContent = formattedValue;
@@ -1262,10 +1262,10 @@ background-size: auto 100vh;
     }
 
     function updateParam(paramClass, value) {
-        const paramElement = document.querySelector(`.Old-Fixed-Param.${paramClass}`);
+        const paramElement = document.querySelector(`YORENOV-hud__params.${paramClass}`);
         if (paramElement) {
-            const progressBar = paramElement.querySelector(".Old-Progress__Values");
-            const valueText = paramElement.querySelector(".Old-Param-Values");
+            const progressBar = paramElement.querySelector("YORENOV-progress__value");
+            const valueText = paramElement.querySelector("YORENOV-param__amount");
             progressBar.style.width = `${value}%`;
             valueText.textContent = value;
         }
@@ -1321,143 +1321,3 @@ background-size: auto 100vh;
 
 AddHud();
 
-
-// hud_time.js — пример модуля для HUD с временем и сохранением позиции
-
-const fs = require('fs');
-const path = require('path');
-
-// Путь к файлу настроек
-const saveFile = path.join(__dirname, 'time.json');
-
-// Настройки времени по умолчанию
-let timeSettings = {
-  x: 135,
-  y: 500,
-  font: "Gotham Pro Black",
-  size: 18
-};
-
-// Попытка загрузить сохранённые настройки
-try {
-  if (fs.existsSync(saveFile)) {
-    const data = fs.readFileSync(saveFile, 'utf8');
-    const loaded = JSON.parse(data);
-    timeSettings = {...timeSettings, ...loaded};
-  }
-} catch (e) {
-  console.error('Error loading time settings:', e);
-}
-
-const moveStep = 1;
-
-// Функция для сохранения настроек
-function saveTimeSettings() {
-  try {
-    fs.writeFileSync(saveFile, JSON.stringify(timeSettings, null, 2));
-  } catch (e) {
-    console.error('Error saving time settings:', e);
-  }
-}
-
-// Псевдо-функция рисования текста (адаптируй под API твоего HUD)
-function drawText(ctx, text, x, y, font, size, color) {
-  // ctx — объект рендера HUD
-  // Здесь надо вызвать методы рендера шрифта и текста конкретно в твоём движке
-  // Ниже пример вывода в консоль вместо рисования
-  console.log(`Draw text "${text}" at (${x},${y}), font: ${font}, size: ${size}, color: ${color}`);
-}
-
-// Обработка перемещения времени стрелками (keyState — объект с флагами нажатия клавиш)
-function handleTimeMovement(keyState) {
-  if (keyState['ArrowLeft']) timeSettings.x = Math.max(0, timeSettings.x - moveStep);
-  if (keyState['ArrowRight']) timeSettings.x += moveStep;
-  if (keyState['ArrowUp']) timeSettings.y = Math.max(0, timeSettings.y - moveStep);
-  if (keyState['ArrowDown']) timeSettings.y += moveStep;
-
-  saveTimeSettings();
-}
-
-// Функция отрисовки времени
-function drawTime(ctx) {
-  const now = new Date();
-  const ms = now.getMilliseconds();
-  const timeString = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}.${String(ms).padStart(3,'0')}`;
-  drawText(ctx, timeString, timeSettings.x, timeSettings.y, timeSettings.font, timeSettings.size, "#FFFFFF");
-}
-
-// Обработка чат-команд для смены шрифта и размера
-function handleChatCommand(command, param) {
-  if (command === 'timefonts') {
-    const fonts = [
-      "Gotham Pro Black",
-      "Tahoma",
-      "Verdana",
-      "Courier New",
-      "Impact",
-      "Times New Roman",
-      "Georgia",
-      "Comic Sans MS",
-      "Lucida Console",
-      "Palatino Linotype",
-      "Trebuchet MS",
-      "Century Gothic",
-      "Franklin Gothic Medium",
-      "Book Antiqua",
-      "Calibri"
-    ];
-    const index = parseInt(param) - 1;
-    if (index >= 0 && index < fonts.length) {
-      timeSettings.font = fonts[index];
-      saveTimeSettings();
-      console.log(`Time font changed to: ${fonts[index]}`);
-    } else {
-      console.log("Invalid font index! Use 1-15");
-    }
-  } else if (command === 'timesize') {
-    const sizes = [10, 14, 18, 22, 28];
-    const index = parseInt(param) - 1;
-    if (index >= 0 && index < sizes.length) {
-      timeSettings.size = sizes[index];
-      saveTimeSettings();
-      console.log(`Time size changed to: ${sizes[index]}`);
-    } else {
-      console.log("Invalid size! Use 1-5");
-    }
-  }
-}
-
-// Главный цикл обновления HUD (встраивай в свой игровой цикл)
-function gameLoop(ctx, keyState, chatCommand, chatParam) {
-  // Обработка команд чата
-  if (chatCommand) {
-    handleChatCommand(chatCommand, chatParam);
-  }
-
-  // Управление позицией времени стрелками
-  handleTimeMovement(keyState);
-
-  // Отрисовка времени
-  drawTime(ctx);
-
-  // Здесь остальной код HUD...
-}
-
-// ====== пример использования ======
-
-// Заглушка контекста рендера (замени на свой объект)
-const fakeCtx = {};
-
-// Заглушка состояния клавиш (замени на реальное)
-let keyState = {};
-
-// Имитация запуска цикла раз в 16 мс (~60 FPS)
-setInterval(() => {
-  gameLoop(fakeCtx, keyState);
-}, 16);
-
-// Имитация ввода команды в чат
-// gameLoop(fakeCtx, keyState, 'timefonts', '3');
-// gameLoop(fakeCtx, keyState, 'timesize', '4');
-
-// Для реальной интеграции замени fakeCtx, keyState и chatCommand обработку под свой движок и логику SAMP.
