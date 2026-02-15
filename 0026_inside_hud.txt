@@ -293,6 +293,23 @@ function AddHud() {
 .Old-Fixed-Logo,
 .Old-Fixed-Main,
 .Old-Fixed-Params,
+.yorenov-prev-mn,
+.YORENOV-param__amount,
+.YORENOV-weapon__ammo #YORENOV-ammo__in-clip,
+.YORENOV-weapon__ammo #YORENOV-ammo__total,
+.YORENOV-weapon__ammo,
+.YORENOV-weapon__icon,
+.YORENOV-hud__weapon,
+.YORENOV-logo__image,
+.YORENOV-hud__logo,
+.YORENOV-green-zone__image,
+.YORENOV-hud__green-zone,
+.YORENOV-radar__images,
+.YORENOV-hud__radar-border,
+.YORENOV-hud-base,
+.YORENOV-hud,
+YORENOV-hud__cash #YORENOV-cash__value,
+.YORENOV-hud__cash #YORENOV-cash__value::before,
 .YORENOV-hud__cash,
 .YORENOV-hud__cash #YORENOV-cash__value::before,
 .YORENOV-hud__cash #YORENOV-cash__value,
@@ -347,78 +364,188 @@ body #app .hud-radmir-info { display: none; }
        font-style:italic;
        font-size:1.39vh;
       }
-.Old-Fixed-Main, .Old-Fixed-Cash, .Wanted_row {
-    align-items: center;
-    display: flex;
-}
-.Old-Fixed-Main {
-    margin-top: .76vh;
-    margin-right: 0vh;
-}
-.Old-Fixed-Weapon {
-position: absolute;
- top: 4.537vh;
-right: 26.6667vh;
-}
-.Ammo-in-clip, .old-param__icon {
-    margin-right: 0.11vh;
-}
-.Old-Fixed-Weapon_back {
-    position: absolute;
-    right: 0vh;
-    top: 0vh;
-    z-index: -1;
-}
-.Old-Fixed-Weapon_icon {
-height: 12.8704vh;
-width: 12.8704vh;
-}
-.Old-Fixed-Weapon_ammo {
-position: absolute;
-right: -2.5926vh;
-top: 10vh;
-color: #c8e0fa;
-width: 18.5185vh;
-text-align: center;
-display: flex;
-flex-direction: row;
-align-items: flex-end;
-justify-content: center;
+.YORENOV-param__amount,.YORENOV-weapon__ammo #YORENOV-ammo__in-clip,.YORENOV-weapon__ammo #YORENOV-ammo__total {
+        text-shadow: 0 -.1852vh 0 #000,0 -.1852vh 0 #000,0 .1852vh 0 #000,0 .1852vh 0 #000,-.1852vh 0 0 #000,.1852vh 0 0 #000,-.1852vh 0 0 #000,.1852vh 0 0 #000,-.0926vh -.1852vh 0 #000,.0926vh -.1852vh 0 #000,-.0926vh .1852vh 0 #000,.0926vh .1852vh 0 #000,-.1852vh -.0926vh 0 #000,.1852vh -.0926vh 0 #000,-.1852vh .0926vh 0 #000,.1852vh .0926vh 0 #000,-.1852vh -.1852vh 0 #000,.1852vh -.1852vh 0 #000,-.1852vh .1852vh 0 #000,.1852vh .1852vh 0 #000,-.1852vh -.1852vh 0 #000,.1852vh -.1852vh 0 #000,-.1852vh .1852vh 0 #000,.1852vh .1852vh 0 #000;
       }
 
-.Ammo-in-clip {
-    font-family: 'GothamPro Bold Italic';
-    font-weight: 900;
-    font-style: italic;
-    font-size: 2.31vh;
-    line-height: 1;
-    text-shadow: 0 0 .46vh #00000080;
-}
-.Ammo-full {
-    font-family: 'GothamPro Light Italic';
-    font-weight: 300;
-    font-style: italic;
-    font-size: 1.67vh;
-    text-shadow: 0 0 .46vh #000000b3;
-}
-.Old-Fixed-Params {
-    height: 17vh;
-    position: 5vh;
-    z-index: 1;
-}
-.Old-Fixed-Cash
-   position: absolute;
-        right: 8.8889vh;
-        top: 16.0185vh;
-        transform: scale(1,.85);
-        display: inline-flex;
-        align-items: center;
+      #app .window[data-dialog-type="2"] .window-table__item:first-child,.YORENOV-param {
+        margin-top: .463vh;
       }
-YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::before  {
- color: #36662c;
+
+      #app .window .window__buttons .controls-button__container_disabled,.YORENOV-hud,.yorenov-prev-mn {
+        pointer-events: none;
+      }
+
+      body {
+        font-family: var(--font-famaly-all);
+      }
+
+      .yorenov-prev-mn {
+        width: 11vh;
+        height: 3vh;
+        margin-left: 2vh;
+      }
+
+      #app .hud-radmir-radar {
+        overflow: hidden;
+        width: 23vh;
+        height: 23vh;
+        left: 6vh;
+        bottom: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale3d(.9,.9,1);
+        transform-origin: 0% 100% 0px;
+      }
+
+      #app .hud-hassle-map,#app .hud-hassle-map .map-mask,#app .hud-radmir-radar__radar,#app .window .window__image {
+        border-radius: 0;
+      }
+
+      #app .hud-hassle-map>img,#app .hud-radmir-radar__radar>img,#app .hud-radmir-wanted,#app .overlay-container,#app .scrollable-container_type_1 .scrollable-container__rail_y,#app .vignette,#app .window .modal__pattern-wrapper {
+        display: none;
+      }
+
+      #app .hud-hassle-map .map-mask {
+        height: 155%!important;
+        width: 155%!important;
+      }
+
+
+
+      .YORENOV-hud {
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+
+      .YORENOV-hud-base {
+        transform-origin: top right;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .YORENOV-hud__radar-border {
+        position: absolute;
+        transform-origin: bottom left;
+        left: 4.8vh;
+        bottom: 3.8vh;
+      }
+
+      .YORENOV-radar__images {
+        width: 23.1vh;
+        height: 23.1vh;
+      }
+
+      .YORENOV-hud__green-zone {
+        position: absolute;
+        transform-origin: bottom right;
+        right: 8vh;
+        bottom: 5vh;
+        transition: .35s;
+        z-index: -1;
+      }
+
+      .YORENOV-green-zone__image {
+        width: 11.3889vh;
+        height: 4.8148vh;
+      }
+
+      .YORENOV-hud__logo {
+        position: absolute;
+        top: 1vh;
+        right: 4.7222vh;
+        transform-origin: top right;
+      }
+
+      .YORENOV-logo__bonus {
+        background-color: #000;
+        right: -1.2963vh;
+        top: 3.7037vh;
+        font-style: normal;
+        width: 2.963vh;
+        height: 2.963vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4815vh;
+        color: #fff;
+        position: absolute;
+        border-radius: 50%;
+        font-weight: 900;
+      }
+
+      .YORENOV-logo__image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 20.9259vh;
+        height: 5.5556vh;
+      }
+
+      .YORENOV-hud__weapon {
+        position: absolute;
+        top: 4.537vh;
+        right: 26.6667vh;
+      }
+
+      .YORENOV-weapon__icon {
+        height: 12.8704vh;
+        width: 12.8704vh;
+      }
+
+      .YORENOV-weapon__ammo {
+        position: absolute;
+        right: -2.5926vh;
+        top: 10vh;
+        color: #c8e0fa;
+        width: 18.5185vh;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+      }
+
+      .YORENOV-weapon__ammo .Ammo-in-clip,.YORENOV-weapon__ammo #YORENOV-ammo__total {
+        font-family: GothamPro;
+        font-weight: 900;
+        font-size: 2.3148vh;
+      }
+
+      .YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::before {
+        color: #36662c;
         text-shadow: 0 -.463vh 0 #000300,0 -.463vh 0 #000300,0 .463vh 0 #000300,0 .463vh 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.463vh 0 0 #000300,.463vh 0 0 #000300,-.0926vh -.463vh 0 #000300,.0926vh -.463vh 0 #000300,-.0926vh .463vh 0 #000300,.0926vh .463vh 0 #000300,-.463vh -.0926vh 0 #000300,.463vh -.0926vh 0 #000300,-.463vh .0926vh 0 #000300,.463vh .0926vh 0 #000300,-.1852vh -.463vh 0 #000300,.1852vh -.463vh 0 #000300,-.1852vh .463vh 0 #000300,.1852vh .463vh 0 #000300,-.463vh -.1852vh 0 #000300,.463vh -.1852vh 0 #000300,-.463vh .1852vh 0 #000300,.463vh .1852vh 0 #000300,-.2778vh -.463vh 0 #000300,.2778vh -.463vh 0 #000300,-.2778vh .463vh 0 #000300,.2778vh .463vh 0 #000300,-.463vh -.2778vh 0 #000300,.463vh -.2778vh 0 #000300,-.463vh .2778vh 0 #000300,.463vh .2778vh 0 #000300,-.3704vh -.463vh 0 #000300,.3704vh -.463vh 0 #000300,-.3704vh .463vh 0 #000300,.3704vh .463vh 0 #000300,-.463vh -.3704vh 0 #000300,.463vh -.3704vh 0 #000300,-.463vh .3704vh 0 #000300,.463vh .3704vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300,-.463vh -.463vh 0 #000300,.463vh -.463vh 0 #000300,-.463vh .463vh 0 #000300,.463vh .463vh 0 #000300;
       }
- .YORENOV-hud__cash {
+
+      .YORENOV-weapon__ammo #YORENOV-ammo__total::before {
+        content: "-";
+        margin-right: .3704vh;
+      }
+
+      .YORENOV-hud__wanted {
+        position: absolute;
+        right: 8.7037vh;
+        top: 22.6852vh;
+      }
+
+      .YORENOV-wanted__row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .YORENOV-wanted__row>img {
+        width: 5.0926vh;
+        height: 5.0926vh;
+      }
+
+      #app .modal__close[data-v-85eb9678] img,#app .trade__close>img,.YORENOV-hud__wanted--always-show .YORENOV-wanted__inactive {
+        opacity: 0;
+      }
+
+      .YORENOV-hud__cash {
         position: absolute;
         right: 8.8889vh;
         top: 16.0185vh;
@@ -488,53 +615,7 @@ YORENOV-hud__cash #YORENOV-cash__value,.YORENOV-hud__cash #YORENOV-cash__value::
         justify-content: center;
         text-align: center;
       }
-.Old-Fixed-Param.health {
-    margin-top: 0;
-    margin-left: 1.45vh;
-}
-.Old-Fixed-Param.armour, .Old-Param-Values {
-    margin-left: 2vh;
-}
-    .Old-Param-Progress, .Old-Progress__Values {
-    width: 16.2037vh;
-    height: 1.1111vh;
-    box-shadow: #000 0 0 0 .4167vh;
-      }
-.Old-Progress__Values {
- height: 1.1111vh;
-      }
-.Old-Progress__Values .circle {
-    width: .85vh;
-    height: .93vh;
-    margin-top: -.25vh;
-    margin-right: -.28vh;
-}
-.Old-Param-Values {
-    font-family: "GothamPro Light Italic";
-    font-weight: 300;
-    font-style: italic;
-    color: white;
-    width: 3.24vh;
-    font-size: 1.67vh;
-    text-shadow: 0 0 .46vh #000000b3;
-}
-.Old-Fixed-Freeze_text {
-    margin-right: 1vh;
-}
-.Old-Fixed-Freeze_value, .Old-Fixed-Freeze_text {
-    font-family: "GothamPro Bold";
-    font-weight: 900;
-    color: #c0ccec;
-    font-size: 2vh;
-    text-shadow: 0 0 2vh #000;
-}
-.Old-Fixed-Param.hunger {
-    margin-left: .35vh;
-}
-.Old-Fixed-Param.breath {
-    margin-left: 3px;
-    display: none;
-}
+
 .Old-Fixed-Param.health .Old-Progress__Values {
     background-color: #5a0c0e;
     
