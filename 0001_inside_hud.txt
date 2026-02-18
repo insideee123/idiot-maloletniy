@@ -478,14 +478,19 @@ body #app .hud-radmir-info { display: none; }
     display: flex;
     justify-content: flex-end;
 }
-
+.Old-Progress__Values .circle {
+    width: .85vh;
+    height: .93vh;
+    margin-top: -.25vh;
+    margin-right: -.28vh;
+}
 .Old-Param-Values {
         opacity: 0;
         width: 4.6296vh;
         color: #fff;
         font-size: 1.6667vh;
         font-weight: 500;
-        margin-left: 2%;  /**куда двигаются бары**\
+        margin-left: 0%;  /**куда двигаются бары**\
         position: relative;
         display: flex;
         justify-content: center;
