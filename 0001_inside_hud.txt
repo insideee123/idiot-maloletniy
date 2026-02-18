@@ -2943,24 +2943,24 @@ background-size: auto 100vh;
         padding: 0;
       }
 
-      .report-main {
+      #app .report-main {
         grid-gap: 0!important;
         grid-template-columns: 31.6vh 52vh!important;
       }
 
-      .report-title {
+      #app .report-title {
         background: #797778;
         font-size: 1.5741vh!important;
         font-weight: 700!important;
         padding: .8333vh 0 .8333vh .8333vh!important;
       }
 
-      .report-button,.report-modal__button {
+      #app .report-button,.report-modal__button {
         font-weight: 700;
         font-size: 1.5vh!important;
       }
 
-      .report-button {
+      #app .report-button {
         background-color: var(--color-buttom-active)!important;
         border: 0!important;
         border-radius: 0!important;
@@ -2970,17 +2970,17 @@ background-size: auto 100vh;
         width: 93%!important;
       }
 
-      .report-popularity {
+      #app .report-popularity {
         margin-top: 0!important;
       }
 
-      .report-popularity__search {
+      #app .report-popularity__search {
         border-radius: 0!important;
         border: .3704vh solid #797778!important;
         width: 107%;
       }
 
-      .report-side__control .button.close {
+      #app .report-side__control .button.close {
         background: #797778!important;
         border-radius: 0!important;
         height: 3.5vh!important;
@@ -3003,26 +3003,26 @@ background-size: auto 100vh;
         box-shadow: none!important;
       }
 
-      .report-appeal__item:hover .data-meta .name,.report-appeal__item:hover .data-meta .online,.report-appeal__item:hover .data-time,.report-appeal__item:hover .text {
+      #app .report-appeal__item:hover .data-meta .name,.report-appeal__item:hover .data-meta .online,.report-appeal__item:hover .data-time,.report-appeal__item:hover .text {
         color: #000!important;
       }
 
-      .report-chat__title {
+      #app .report-chat__title {
         border-bottom: .3704vh solid #797778!important;
       }
 
-      .report-chat__input {
+      #app .report-chat__input {
         border-top: .3704vh solid #797778!important;
       }
 
-      .report-popularity__item {
+      #app .report-popularity__item {
         border-radius: 0!important;
         border: 0!important;
         padding: 1vh!important;
         border-right: .463vh solid!important;
       }
 
-      .report-popularity__item.active:hover {
+      #app .report-popularity__item.active:hover {
         box-shadow: none!important;
       }
 
@@ -3030,15 +3030,15 @@ background-size: auto 100vh;
         background: #000!important;
       }
 
-      .report-popularity__item.active .hint,.report-popularity__item.active .title {
+      #app .report-popularity__item.active .hint,.report-popularity__item.active .title {
         color: #fff!important;
       }
 
-      .report-popularity__item.active .text {
+      #app .report-popularity__item.active .text {
         color: #ffffff73!important;
       }
 
-      .report-popularity__item.active .title svg {
+      #app .report-popularity__item.active .title svg {
         fill: #fff!important;
       }
 
