@@ -461,12 +461,17 @@ body #app .hud-radmir-info { display: none; }
         font-family: SAfonts!important;
       }
         
-.Old-Fixed-Param { 
+.Old-Fixed-Param {
         display: flex;
-        top: 5vh; 
         align-items: center;
       }
-
+.Old-Fixed-Param.health {
+    margin-top: 0;
+    margin-left: 1.45vh;
+}
+.Old-Fixed-Param.armour, .Old-Param-Values {
+    margin-left: .93vh;
+}
 .Old-Param-Progress, .Old-Progress__Values {
         width: 16.2037vh;
         height: 1.1111vh;
