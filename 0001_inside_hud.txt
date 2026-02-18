@@ -1194,14 +1194,14 @@ background-size: auto 100vh;
 
     const updateFunctions = {
         show: (value) => {
-            const hudEl = document.querySelector(".Old-Fixed-Hud");
+            const hudEl = document.querySelector(".YORENOV-hud-base");
             if (hudEl) hudEl.style.display = +value >= 1 ? "" : "none";
         },
         showBars: (value) => {
             updateFunctions.show(value);
         },
         weapon: (value) => {
-            const weaponIcon = document.querySelector(".Old-Fixed-Weapon_icon");
+            const weaponIcon = document.querySelector(".YORENOV-weapon__icon");
             if (weaponIcon) {
                 const weaponSrc = oldRadmirConfig.weapon[value];
                 if (weaponSrc) {
@@ -1253,7 +1253,7 @@ background-size: auto 100vh;
             }
         },
         money: (value) => {
-            const moneyEl = document.querySelector(".Old-Fixed-Cash span");
+            const moneyEl = document.querySelector("#YORENOV-cash__value span");
             if (moneyEl) moneyEl.textContent = formatNumberWithDots(value);
         },
         wanted: (value) => {
