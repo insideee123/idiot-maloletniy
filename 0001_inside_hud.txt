@@ -389,7 +389,7 @@ body #app .hud-radmir-info { display: none; }
     display: flex;
 }
 .Old-Fixed-Main {
-    margin-top: .46vh;
+    margin-top: 2vh;
     margin-right: 3.46vh;
 }
 .Old-Fixed-Weapon {
@@ -397,9 +397,7 @@ body #app .hud-radmir-info { display: none; }
         top: 4.537vh;
         right: 26.6667vh;
       }
-.Ammo-in-clip, .old-param__icon {
-    margin-right: 1.11vh;
-}
+
 .Old-Fixed-Weapon_back {
     position: absolute;
     right: -2vh;
@@ -470,6 +468,9 @@ body #app .hud-radmir-info { display: none; }
     margin-left: 0vh;
 }
 .Old-Fixed-Param.armour, .Old-Param-Values {
+    margin-left: 0vh;
+}
+    .Old-Fixed-Param.hunger, .Old-Param-Values {
     margin-left: 0vh;
 }
 .Old-Param-Progress, .Old-Progress__Values {
