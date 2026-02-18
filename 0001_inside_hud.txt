@@ -512,15 +512,10 @@ body #app .hud-radmir-info { display: none; }
       }
 
 .Old-Fixed-Params {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 4.6444vh;
-        top: 7.3148vh;
-        justify-content: flex-end;
-        height: 9.1852vh;
-        padding-bottom: .7407vh;
-      }
+    height: 13vh;
+    position: relative;
+    z-index: 1;
+}
 .Old-Fixed-Cash {
     justify-content: flex-end;
     color: white;
@@ -538,8 +533,9 @@ body #app .hud-radmir-info { display: none; }
 }
 .Old-Fixed-Param {   /***высота баров***\
        display: flex;
-        align-items: absolute;
+        align-items: flex;
       }
+
 .Old-Param-Progress, .Old-Progress__Values {
         width: 16.2037vh;
         height: 1.1111vh;
