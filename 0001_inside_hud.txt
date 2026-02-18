@@ -372,15 +372,16 @@ body #app .hud-radmir-info { display: none; }
     display: flex;
 }
 .Old-Fixed-Main {
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-      }
-.Old-Fixed-Weapon {
         transform-origin: top right;
         position: absolute;
         right: 0;
         top: 0;
+      }
+
+.Old-Fixed-Weapon {
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
       }
 
 .Ammo-in-clip, .old-param__icon {
