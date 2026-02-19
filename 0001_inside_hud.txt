@@ -485,7 +485,7 @@ body #app .hud-radmir-info { display: none; }
         margin-top: 0;
     top: auto;
 }
-
+  // под барами, ширина длина баров
         .Old-Param-Progress, .Old-Progress__Values {
         width: 16.2037vh;
         height: 1.1111vh;
@@ -501,13 +501,14 @@ body #app .hud-radmir-info { display: none; }
     margin-top: -.25vh;
     margin-right: -.28vh;
 }
+    // цифорки на барах
 .Old-Param-Values {
         opacity: 1;
         width: 4.6296vh;
         color: #fff;
         font-size: 1.6667vh;
         font-weight: 500;
-        right: 8vh;
+        right: 10vh;
         position: relative;
         display: flex;
         justify-content: center;
@@ -532,7 +533,7 @@ body #app .hud-radmir-info { display: none; }
     display: none;
 }
 
-
+// бары хп еда броня
 .Old-Fixed-Param.armour .Old-Progress__Values {
    background-color: #5e5e5e;
 }
