@@ -1405,10 +1405,16 @@ background-size: auto 100vh;
                 }
             }
         },
-        money: (value) => {
-            const moneyEl = document.querySelector(".Old-Fixed-Cash span");
-            if (moneyEl) moneyEl.textContent = formatNumberWithDots(value);
-        },
+money: (value) => {
+    const moneyEl = document.querySelector(".Old-Fixed-Cash span");
+    if (!moneyEl) return;
+
+    const digits = String(value);
+    const padded = digits.padStart(8, '0');
+
+    moneyEl.textContent = padded;
+},
+
         wanted: (value) => {
             const wantedIcons = document.querySelectorAll(".Wanted_row img");
             for (let i = 0; i < wantedIcons.length; i++) {
@@ -1515,51 +1521,6 @@ background-size: auto 100vh;
 }
 
 AddHud();
-
-
-(function () {
-    const cashEl = document.querySelector('.Old-Fixed-Cash');
-    if (!cashEl) return;
-
-    let selfUpdate = false;
-
-    function format(text) {
-        const symbolMatch = text.match(/^[^\d]+/);
-        const symbol = symbolMatch ? symbolMatch[0] : '';
-
-        const digits = text.replace(/[^\d]/g, '');
-        if (!digits) return null;
-
-        if (digits.length >= 8) return null;
-
-        return symbol + digits.padStart(8, '0');
-    }
-
-    const observer = new MutationObserver(() => {
-        if (selfUpdate) return;
-
-        const raw = cashEl.textContent;
-        if (!raw) return;
-
-        const digits = raw.replace(/[^\d]/g, '');
-        if (!digits || digits.length >= 8) return;
-
-        const formatted = format(raw);
-        if (!formatted) return;
-
-        selfUpdate = true;
-        cashEl.textContent = formatted;
-        selfUpdate = false;
-    });
-
-    observer.observe(cashEl, {
-        childList: true,
-        characterData: true,
-        subtree: true
-    });
-})();
-
-
 
 
 (function () {
