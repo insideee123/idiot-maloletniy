@@ -1507,55 +1507,28 @@ background-size: auto 100vh;
 AddHud();
 
 
-// ===== ФОРМАТ ДЕНЕГ: 8 ЗНАКОВ =====
+// ===== ФОРМАТ: 8 ЗНАКОВ =====
 function formatMoney8(value) {
-    let num = value.toString().replace(/\D/g, '');
-    if (num.length === 0) return null; // <-- КЛЮЧЕВО
+    const num = value.toString().replace(/\D/g, '');
+    if (!num) return null;
     if (num.length >= 8) return num;
     return num.padStart(8, '0');
 }
 
-// ===== ПРИМЕНЕНИЕ ФОРМАТА =====
-function applyMoneyFormat() {
+// ===== МЯГКОЕ ОБНОВЛЕНИЕ (БЕЗ ФРИЗОВ) =====
+setInterval(() => {
     const cashEl = document.querySelector('.Old-Fixed-Cash');
     if (!cashEl) return;
 
     const raw = cashEl.textContent;
-
-    // если денег ещё нет — НЕ ТРОГАЕМ
     const formatted = formatMoney8(raw);
-    if (formatted === null) return;
 
-    // защита от зацикливания
-    if (cashEl.dataset.formatted === '1') return;
+    if (!formatted) return;
+    if (raw === formatted) return; // ← КЛЮЧЕВО
 
-    cashEl.dataset.formatted = '1';
     cashEl.textContent = formatted;
-}
+}, 300);
 
-// ===== НАБЛЮДАТЕЛЬ =====
-const moneyObserver = new MutationObserver(() => {
-    const cashEl = document.querySelector('.Old-Fixed-Cash');
-    if (cashEl) {
-        cashEl.dataset.formatted = '0'; // разрешаем обновление
-        applyMoneyFormat();
-    }
-});
-
-// ===== ОЖИДАНИЕ HUD =====
-const waitForCash = setInterval(() => {
-    const cashEl = document.querySelector('.Old-Fixed-Cash');
-    if (!cashEl) return;
-
-    moneyObserver.observe(cashEl, {
-        childList: true,
-        characterData: true,
-        subtree: true
-    });
-
-    applyMoneyFormat();
-    clearInterval(waitForCash);
-}, 100);
 
 
 (function () {
