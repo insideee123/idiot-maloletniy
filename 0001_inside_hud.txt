@@ -1,5 +1,6 @@
 window.yorenovHud = window.yorenovHud || {};
-yorenovHud.logoChanger = {
+function attachLogoChanger() {
+    yorenovHud.logoChanger = {
         data: {
             defaultLogo: "yorenov-logo-1",
             logo: "",
@@ -8,17 +9,14 @@ yorenovHud.logoChanger = {
             originalAddDialogInQueue: null,
         },
 
-        // Применение логотипа HUD
         applyHudLogo(e) {
             document.body.classList.add(e);
         },
 
-        // Удаление логотипа HUD
         removeHudLogo(e) {
             document.body.classList.remove(e);
         },
 
-        // Смена логотипа HUD
         changeHudLogo(e) {
             if (this.data.prevLogo) {
                 this.removeHudLogo(this.data.prevLogo);
@@ -38,79 +36,61 @@ yorenovHud.logoChanger = {
             i = () => {},
             s = () => {}
         ) {
-            if (yorenovHud.logoChanger.data.originalSendClientEvent == null) {
-                yorenovHud.logoChanger.data.originalSendClientEvent = window.sendClientEvent;
-                yorenovHud.logoChanger.data.originalAddDialogInQueue = window.addDialogInQueue;
+            if (this.data.originalSendClientEvent == null) {
+                this.data.originalSendClientEvent = window.sendClientEvent;
+                this.data.originalAddDialogInQueue = window.addDialogInQueue;
+
                 window.sendClientEvent = new Proxy(window.sendClientEvent, {
-                    apply(e, o, n) {
+                    apply: (target, thisArg, args) => {
                         try {
-                            if (n.includes("OnDialogResponse") && window.isFakeDialog) {
-                                window.sendClientEvent =
-                                    yorenovHud.logoChanger.data.originalSendClientEvent;
-                                yorenovHud.logoChanger.data.originalSendClientEvent = null;
-                                window.addDialogInQueue =
-                                    yorenovHud.logoChanger.data.originalAddDialogInQueue;
-                                yorenovHud.logoChanger.data.originalAddDialogInQueue = null;
-                                if (n[3] == 0) {
-                                    s();
-                                    yorenovHud.addChatMessage(
-                                        `(info) Executed function on left btn -> '${t}'...`
-                                    );
-                                }
-                                if (n[3] == 1) {
+                            if (args.includes("OnDialogResponse") && window.isFakeDialog) {
+                                window.sendClientEvent = this.data.originalSendClientEvent;
+                                window.addDialogInQueue = this.data.originalAddDialogInQueue;
+                                this.data.originalSendClientEvent = null;
+                                this.data.originalAddDialogInQueue = null;
+
+                                if (args[3] === 0) s();
+                                if (args[3] === 1) {
                                     i(
-                                        n[5]
-                                        .replace('<p style="color: #">', "")
-                                        .replace("</p>", "")
-                                    );
-                                    yorenovHud.addChatMessage(
-                                        `(info) Executed function on right btn -> '${t}'...`
+                                        args[5]
+                                            .replace(/<[^>]*>/g, "")
+                                            .trim()
                                     );
                                 }
-                                yorenovHud.addChatMessage(`(info) Close fake dialog -> '${t}'...`);
                                 return false;
                             }
-                        } catch (e) {
-                            yorenovHud.addChatMessage(`(error) Error in fake dialog ${e}...`);
+                        } catch (err) {
+                            yorenovHud.addChatMessage(`Ошибка диалога: ${err}`);
                         }
-                        return Reflect.apply(e, o, n);
+                        return Reflect.apply(target, thisArg, args);
                     },
                 });
 
                 window.addDialogInQueue = new Proxy(window.addDialogInQueue, {
-                    apply: (e, t, o) =>
-                        o.length > 1 && o[1].includes("jslDialog") ?
-                        ((o[1] = o[1].replace("jslDialog", "")),
-                            (window.isFakeDialog = true),
-                            Reflect.apply(e, t, o)) :
-                        ((window.isFakeDialog = false),
-                            (window.sendClientEvent =
-                                yorenovHud.logoChanger.data.originalSendClientEvent),
-                            (yorenovHud.logoChanger.data.originalSendClientEvent = null),
-                            (window.addDialogInQueue =
-                                yorenovHud.logoChanger.data.originalAddDialogInQueue),
-                            (yorenovHud.logoChanger.data.originalAddDialogInQueue = null),
-                            Reflect.apply(e, t, o)),
+                    apply: (target, thisArg, args) => {
+                        if (args[1] && args[1].includes("jslDialog")) {
+                            args[1] = args[1].replace("jslDialog", "");
+                            window.isFakeDialog = true;
+                        } else {
+                            window.isFakeDialog = false;
+                        }
+                        return Reflect.apply(target, thisArg, args);
+                    },
                 });
-
-                yorenovHud.addChatMessage(`(info) Set hooks for fake dialog -> '${t}'...`);
             }
+
             window.addDialogInQueue(
                 `[0,${e},"${t}","${o}","${n}","${a}",0,0]`,
                 "jslDialog" + r,
                 0
             );
-            yorenovHud.addChatMessage(`(info) Fake dialog: '${t}' was created...`);
         },
 
         showChangeLogoDialog() {
-            const radarOptions = [
-                "Первый",
-                "Второй",
-                "Третий",
-            ];
-            const optionsString = radarOptions.join("<n>");
-            yorenovHud.logoChanger.createDialog(
+            const options = ["Первый", "Второй", "Третий"];
+            const optionsString = options.join("<n>");
+
+            this.createDialog(
                 2,
                 "Yorenov Logo Type",
                 "Выберите тип лого:",
@@ -118,39 +98,24 @@ yorenovHud.logoChanger = {
                 "Закрыть",
                 optionsString,
                 (selected) => {
-                    try {
-                        let cleanSelection = selected;
-                        if (typeof selected === "string") {
-                            cleanSelection = selected.replace(/<[^>]*>/g, "").trim();
-                        }
-                        if (radarOptions.includes(cleanSelection)) {
-                            yorenovHud.addChatMessage(`Выбран тип лого: ${cleanSelection}`);
-                            if (cleanSelection === "Первый") {
-                                yorenovHud.logoChanger.changeHudLogo("yorenov-logo-1");
-                            } else if (cleanSelection === "Второй") {
-                                yorenovHud.logoChanger.changeHudLogo("yorenov-logo-2");
-                            } else if (cleanSelection === "Третий") {
-                                yorenovHud.logoChanger.changeHudLogo("yorenov-logo-3");
-                            }
-                        } else {
-                            yorenovHud.addChatMessage("Неверный выбор");
-                        }
-                    } catch (error) {
-                        yorenovHud.addChatMessage(`Ошибка при выборе лого: ${error}`);
+                    if (selected === "Первый") {
+                        this.changeHudLogo("yorenov-logo-1");
+                    } else if (selected === "Второй") {
+                        this.changeHudLogo("yorenov-logo-2");
+                    } else if (selected === "Третий") {
+                        this.changeHudLogo("yorenov-logo-3");
                     }
-                },
-                () => {
-                    yorenovHud.addChatMessage("Выбор лого отменен");
                 }
             );
         },
 
-        // Инициализация смены логотипа
         init() {
             this.data.logo = this.data.defaultLogo;
             this.changeHudLogo(this.data.logo);
         }
     };
+};
+
 function AddHud() {
     let hudStyleElement;
     let loadingNotification;
@@ -1927,16 +1892,13 @@ function updateParam(paramClass, value) {
     window.onInfoChange = onInfoChange;
 }
 AddHud();
+attachLogoChanger();
+yorenovHud.logoChanger.init();
 
-setTimeout(() => {
-    if (window.yorenovHud && yorenovHud.logoChanger) {
-        yorenovHud.logoChanger.init();
-        console.log("logoChanger запущен");
-    } else {
-        console.error("logoChanger не найден");
-    }
-}, 1000);
-;
+yorenovHud.chat.registerCommand("/changelogo", () => {
+    yorenovHud.logoChanger.showChangeLogoDialog();
+});
+
 
 
 (function () {
