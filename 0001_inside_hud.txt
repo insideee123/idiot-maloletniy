@@ -1526,35 +1526,33 @@ AddHud();
 
 let lastMoneyValue = null;
 
+// извлекаем число ТОЛЬКО из нижнего HUD (оригинал)
 function extractNumber(text) {
     if (!text) return null;
     const n = text.replace(/[^\d]/g, '');
     return n ? parseInt(n, 10) : null;
 }
 
+// 8 знаков
 function to8Digits(num) {
     const s = num.toString();
     return s.length >= 8 ? s : s.padStart(8, '0');
 }
 
 setInterval(() => {
-    const root = document.querySelector('.Old-Fixed-Cash');
-    if (!root) return;
+    const original = document.querySelector('.Old-Fixed-Cash:last-of-type');
+    const myMoney = document.querySelector('.Old-Fixed-Cash:first-of-type .cash-value');
 
-    const overlayValue = root.querySelector('.cash-value');
-    if (!overlayValue) return;
+    if (!original || !myMoney) return;
 
-    // ЧИТАЕМ ТО, ЧТО ПИШЕТ ИГРА
-    const realNumber = extractNumber(root.textContent);
+    const realNumber = extractNumber(original.textContent);
     if (realNumber === null) return;
+
     if (realNumber === lastMoneyValue) return;
-
     lastMoneyValue = realNumber;
-    overlayValue.textContent = to8Digits(realNumber);
+
+    myMoney.textContent = to8Digits(realNumber);
 }, 200);
-
-
-
 
 
 
