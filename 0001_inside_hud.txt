@@ -1531,13 +1531,12 @@ AddHud();
          style="width: 30.3889vh; height: 13.8148vh;">
     `;
     customZone.style.cssText = `
-        position: flex;
-        left = 5vh;
+        position: absolute;
+        transform-origin: bottom right;
+        right: 8vh;
         bottom: 5vh;
-        display: none;
-        align-items: center;
-        gap: 0.5vh;
-        z-index: 999999;
+        transition: .35s;
+        z-index: -1;
     `;
     document.body.appendChild(customZone);
 
