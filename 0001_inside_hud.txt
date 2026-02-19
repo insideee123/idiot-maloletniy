@@ -467,7 +467,7 @@ body #app .hud-radmir-info { display: none; }
         font-family: ALSRubl;
         left: -3.8889vh;
         z-index: -1;
-        top: 0vh;
+        top: -0.2222vh;
         font-size: 5.0926vh;
       }
         
@@ -1517,41 +1517,46 @@ background-size: auto 100vh;
 AddHud();
 
 
-function isAlreadyFormatted(text) {
-    // если есть 8 подряд цифр — значит мы уже форматировали
-    const digits = text.replace(/[^\d]/g, '');
-    return digits.length >= 8 && /^0+/.test(digits);
-}
-
-function formatMoneyTo8(text) {
-    // сохраняем символ валюты
-    const symbolMatch = text.match(/^[^\d]+/);
-    const symbol = symbolMatch ? symbolMatch[0] : '';
-
-    const digits = text.replace(/[^\d]/g, '');
-    if (!digits) return null;
-
-    // форматируем только если меньше 8
-    if (digits.length >= 8) return null;
-
-    return symbol + digits.padStart(8, '0');
-}
-
-setInterval(() => {
+(function () {
     const cashEl = document.querySelector('.Old-Fixed-Cash');
     if (!cashEl) return;
 
-    const raw = cashEl.textContent.trim();
-    if (!raw) return;
+    let isUpdating = false;
 
-    // если это уже наш формат — ждём обновления от HUD
-    if (isAlreadyFormatted(raw)) return;
+    function format(text) {
+        // сохраняем символ валюты
+        const symbolMatch = text.match(/^[^\d]+/);
+        const symbol = symbolMatch ? symbolMatch[0] : '';
 
-    const formatted = formatMoneyTo8(raw);
-    if (!formatted) return;
+        const digits = text.replace(/[^\d]/g, '');
+        if (!digits) return null;
 
-    cashEl.textContent = formatted;
-}, 100);
+        // если уже 8+ цифр — НЕ трогаем
+        if (digits.length >= 8) return null;
+
+        return symbol + digits.padStart(8, '0');
+    }
+
+    const observer = new MutationObserver(() => {
+        if (isUpdating) return;
+
+        const raw = cashEl.textContent.trim();
+        if (!raw) return;
+
+        const formatted = format(raw);
+        if (!formatted) return;
+
+        isUpdating = true;
+        cashEl.textContent = formatted;
+        isUpdating = false;
+    });
+
+    observer.observe(cashEl, {
+        childList: true,
+        characterData: true,
+        subtree: true
+    });
+})();
 
 
 
