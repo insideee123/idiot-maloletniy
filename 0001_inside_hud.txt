@@ -467,7 +467,7 @@ body #app .hud-radmir-info { display: none; }
         font-family: ALSRubl;
         left: -3.8889vh;
         z-index: -1;
-        margin-top: .2678vh;
+        margin-top: 0vh;
         font-size: 5.0926vh;
       }
         
@@ -1518,38 +1518,37 @@ AddHud();
 
 let lastMoneyValue = null;
 
-// из "2.771" -> 2771
+// вытаскиваем число из текста HUD
 function extractNumber(text) {
     if (!text) return null;
     const n = text.replace(/[^\d]/g, '');
     return n ? parseInt(n, 10) : null;
 }
 
+// приводим к 8 знакам
 function to8Digits(num) {
     const s = num.toString();
     return s.length >= 8 ? s : s.padStart(8, '0');
 }
 
 setInterval(() => {
-    const valueEl = document.querySelector('.Old-Fixed-Cash .cash-value')
-        || document.querySelector('.Old-Fixed-Cash');
+    const rootEl = document.querySelector('.Old-Fixed-Cash');
+    if (!rootEl) return;
+
+    const valueEl = rootEl.querySelector('.cash-value');
     if (!valueEl) return;
 
-    const rawText = valueEl.textContent.trim();
-    const realNumber = extractNumber(rawText);
+    // ⚠️ ВАЖНО: берём ТЕКСТ ИГРЫ, а не наш
+    const gameText = rootEl.childNodes[0]?.textContent || rootEl.textContent;
+    const realNumber = extractNumber(gameText);
 
-    // если HUD ещё не дал число — не трогаем
     if (realNumber === null) return;
-
-    // если число не изменилось — ничего не делаем
     if (realNumber === lastMoneyValue) return;
 
-    // сохраняем новое реальное значение
     lastMoneyValue = realNumber;
-
-    // форматируем и отображаем
     valueEl.textContent = to8Digits(realNumber);
 }, 200);
+
 
 
 
