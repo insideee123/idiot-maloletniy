@@ -1878,6 +1878,45 @@ function updateParam(paramClass, value) {
 AddHud();
 
 
+/* ===================== YORENOV DOM ===================== */
+(function () {
+
+    function mountYorenovDOM() {
+        // 1. проверка что основной объект уже есть
+        if (!window.yorenovHud) return;
+        if (!window.yorenovHud.getHtmlSpeedometer) return;
+        if (!window.yorenovHud.speedometer) return;
+
+        // защита от повторного запуска
+        if (window.__yorenovDomMounted) return;
+        window.__yorenovDomMounted = true;
+
+        // 2. создаём HTML
+        const html = window.yorenovHud.getHtmlSpeedometer();
+        const root = document.createElement("div");
+        root.innerHTML = html;
+
+        document.body.appendChild(root);
+
+        // 3. привязываем DOM-элементы
+        window.yorenovHud.speedometer.create(root);
+
+        // 4. начальное состояние (как в твоём коде)
+        if (window.interface && window.interface("Hud")) {
+            window.interface("Hud").speedometer.show = 0;
+        }
+    }
+
+    // 5. ждём загрузку DOM
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", mountYorenovDOM);
+    } else {
+        mountYorenovDOM();
+    }
+
+})();
+
+
 (function () {
     if (window.__greenZoneFixed) return;
     window.__greenZoneFixed = true;
