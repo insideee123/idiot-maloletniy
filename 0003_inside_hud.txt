@@ -460,8 +460,8 @@ body #app .hud-radmir-info { display: none; }
 
 .Old-Fixed-Cash {
         position: absolute;
-        right: 2.7vh;
-        top: 6.1vh;
+        right: 2.2vh;
+        top: 6.3vh;
         transform: scale(1,.85);
         display: inline-flex;
         align-items: center;
@@ -522,12 +522,10 @@ display: none;
         color: #00ff55;
         font-size: 1.6667vh;
         font-weight: 500;
-        right: 50vh;
+        right: 20vh;
         top: 10vh
         position: absolute;
         display: flex;
-        justify-content: center;
-        text-align: center;
       }
   
 .Old-Fixed-Freeze_text {
@@ -581,7 +579,7 @@ display: none;
         position: absolute;
         right: 6.0vh;
         top: 24.2852vh;
-          background-color: #ffffffcc;
+          background-color: #777777cc;
           border-radius: 18px;
           box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
   height: 45px;
