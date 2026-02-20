@@ -411,8 +411,8 @@ body #app .hud-radmir-info { display: none; }
 }
 .Old-Fixed-Weapon {
         position: absolute;
-        top: 5.537vh;
-        right: 2.9667vh;
+        top: 6.537vh;
+        right: 2.2667vh;
         background-color: #777777cc;
         border-radius: 18px;
           height: 150px;
@@ -464,7 +464,7 @@ body #app .hud-radmir-info { display: none; }
 
 .Old-Fixed-Cash {
         position: absolute;
-        right: 2.0vh;
+        right: 1.9vh;
         top: 8.3vh;
         transform: scale(1,.85);
         display: inline-flex;
@@ -521,7 +521,8 @@ display: none;
 .Old-Param-Values {
         opacity: 1;
         width: 4.6296vh;
-        color: #00ff55;
+        color: #ffffff;
+        text-shadow: 0 0 2vh #000;
         font-size: 1.6667vh;
         font-weight: 500;
         right: 20vh;
@@ -583,7 +584,6 @@ display: none;
         top: 26.2852vh;
           background-color: #777777cc;
           border-radius: 18px;
-          box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
           height: 45px;
           width: 210px;
 }
@@ -594,7 +594,7 @@ display: none;
         flex-direction: row;
       }
 .Wanted_row img {
-        width: 2.8vh;
+        width: 2.86vh;
         height: 2.8vh;
       }
 .Old-Fixed-HudBottom {
