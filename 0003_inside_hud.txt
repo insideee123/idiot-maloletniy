@@ -462,17 +462,21 @@ body #app .hud-radmir-info { display: none; }
 }
 
 .Old-Fixed-Cash {
-                position: absolute;
-        top: 12.0vh;
-        right: 0.2667vh;
+    position: absolute;
+    display: flex;
+    align-items: center;     
+    justify-content: center; 
+    top: 120px;
+    right: 0;
     color: white;
     font-family: "GothamPro Black Italic";
     font-style: italic;
-    font-size: 2.59vh;
+    font-size: 20px;
+    line-height: 1;
     background-color: #000000cc;
     border-radius: 18px;
-          height: 45px;
-          width: 210px;
+    height: 45px;
+    width: 210px;
 }
         .Old-Fixed-Cash::before {
         position: absolute;
