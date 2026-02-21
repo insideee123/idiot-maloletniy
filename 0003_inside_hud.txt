@@ -462,8 +462,7 @@ body #app .hud-radmir-info { display: none; }
 }
 
 .Old-Fixed-Cash {
-    justify-content: center;
-        top: 125px;
+    top: 125px;
     right: -1vh;
     color: white;
     font-family: "GothamPro Black Italic";
