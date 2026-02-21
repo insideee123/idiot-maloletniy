@@ -467,11 +467,11 @@ body #app .hud-radmir-info { display: none; }
     align-items: center;     
     justify-content: center; 
     top: 125px;
-    right: 0;
+    right: -2px;
     color: white;
     font-family: "GothamPro Black Italic";
     font-style: italic;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 1;
     background-color: #000000cc;
     border-radius: 18px;
@@ -484,7 +484,7 @@ body #app .hud-radmir-info { display: none; }
         content: "j";
         font-family: ALSRubl;
         font-style: normal;
-        font-size: 20px;
+        font-size: 30px;
         position: absolute;
         left: 16px;
         top: 50%;
