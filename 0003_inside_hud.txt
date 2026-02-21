@@ -387,10 +387,6 @@ body #app .hud-radmir-info { display: none; }
        font-style:italic;
        font-size:1.39vh;
       }
-.Old-Fixed-Main, .Old-Fixed-Cash, .Wanted_row {
-    align-items: center;
-    display: flex;
-}
 .Old-Fixed-Main {
     margin-top: 2vh;
     margin-right: 1vh;
@@ -407,13 +403,13 @@ body #app .hud-radmir-info { display: none; }
       }
 
 .Old-Fixed-Weapon_icon {   // размер пнг худа
-        height: 10.8704vh;
-        width: 10.8704vh;
+        height: 11.8704vh;
+        width: 11.8704vh;
       }
 .Old-Fixed-Weapon_ammo {
     position: absolute;
-    bottom:4.8vh;
-    right:4.3vh;
+    bottom: 2.8vh;
+    right: 5.3vh;
     display: flex;
     align-items: flex-end;
     color: #fff;
@@ -498,7 +494,6 @@ display: none;
 }
     // цифорки на барах
 .Old-Param-Values {
-    position: absolute;
     font-family: "GothamPro Black Italic";
     font-weight: 300;
     font-style: italic;
@@ -561,7 +556,7 @@ display: none;
 }
 
 .Old-Fixed-Wanted {
-        position: relative;
+        position: absolute;
         right: 2.7vh;
         top: 26.2852vh;
         text-align: center;
