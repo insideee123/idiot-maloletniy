@@ -415,7 +415,7 @@ body #app .hud-radmir-info { display: none; }
         right: 2.2667vh;
         text-align: center;
         background-color: #000000cc;
-        border-radius: 18px;
+        border-radius: 13px;
           height: 150px;
           width: 210px;
       }
@@ -471,9 +471,8 @@ body #app .hud-radmir-info { display: none; }
     font-family: "GothamPro Black Italic";
     font-style: italic;
     font-size: 25px;
-    line-height: 1;
     background-color: #000000cc;
-    border-radius: 18px;
+    border-radius: 13px;
     height: 45px;
     width: 210px;
 }
@@ -509,7 +508,7 @@ body #app .hud-radmir-info { display: none; }
         .Old-Param-Progress, .Old-Progress__Values {
         width: 7.2037vh;
         height: 1vh;
-        border-radius: 18px;
+        border-radius: 50px;
         box-shadow: #000 0 0 0 .4167vh;
       }
 .Old-Progress__Values {
@@ -586,7 +585,7 @@ body #app .hud-radmir-info { display: none; }
         top: 29.2852vh;
         text-align: center;
           background-color: #000000cc;
-          border-radius: 18px;
+          border-radius: 13px;
           height: 45px;
           width: 210px;
 }
@@ -2076,7 +2075,7 @@ background-size: auto 100vh;
         },
         totalAmmo: (value) => {
             const totalAmmoEl = document.querySelector(".Ammo-full");
-            if (totalAmmoEl) totalAmmoEl.textContent = "-" + value;
+            if (totalAmmoEl) totalAmmoEl.textContent = "" + value;
         },
         freeze: (value) => {
             const freezeValueEl = document.querySelector(".Old-Fixed-Freeze_value");
